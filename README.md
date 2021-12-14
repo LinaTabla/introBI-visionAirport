@@ -1,8 +1,5 @@
 # Vision Airport project for Intro BI
 
-## CLEANSED > DWH > SSIS
-See *db_vlucht_queries.sql* for workflow (first draft)
-
 # Handleiding
 Dit project bestaat uit vijf grote stappen:
 1. [Data importing](#raw)
@@ -13,6 +10,7 @@ Dit project bestaat uit vijf grote stappen:
 
 ## Data importing <a name="raw"></a>
 Import RAW data in SQL Server Management Studio.
+>See **Database_Setup.sql** in *scripts* file
 
 ## Data cleaning <a name="cleansed"></a>
 Drie schema's maken in de VisionAirport_OLTP database:
