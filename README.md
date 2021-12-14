@@ -26,7 +26,9 @@ Drie schema's maken in de VisionAirport_OLTP database:
 
 ## Data Warehouse creatie scripts <a name="dwh"></a>
 In SSMS de juiste dataypes en relaties leggen (PK, FK, ...)
->Zie **Cleanse_*.sql** scripts
+1. Maak alle CLEANSED-tabellen aan met de juiste datatypes en PK's. (Zie **Create_Cleansed_Tables.sql** script)
+2. Vul de CLEANSED-tabellen met data van de RAW-tabellen. (Zie **Cleanse_*.sql** scripts)
+3. Leg de FK's
 
 <br>
 
