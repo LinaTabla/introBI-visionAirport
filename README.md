@@ -2,6 +2,17 @@
 
 <br>
 
+- [] Create and cleanse all tables algemeen (Youssef)
+- [] Cleansing scripts: 
+  * [] Foreign keys (Lina)
+  * [] UTF-8 varchar string decoden > if ASCII or null > do nothing
+  * [] Delete duplicates 
+- [] SSIS: insert **actual** data in DWH (Lina)
+- [] Incremental & full Load SSIS
+- [] Dashboard (Wout)
+- [] Documentatie (Jonas)
+- [] Powerpoint (Jonas)
+
 # Handleiding
 Dit project bestaat uit vijf grote stappen:
 1. [Data importing](#raw)
