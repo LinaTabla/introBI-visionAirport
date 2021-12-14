@@ -2,6 +2,7 @@
 
 <br>
 
+TODO
 - [] Create and cleanse all tables algemeen (Youssef)
 - [] Cleansing scripts: 
   * [] Foreign keys (Lina)
