@@ -1,5 +1,7 @@
 # Vision Airport project for Intro BI
 
+<br>
+
 # Handleiding
 Dit project bestaat uit vijf grote stappen:
 1. [Data importing](#raw)
@@ -14,28 +16,28 @@ Dit project bestaat uit vijf grote stappen:
 Import RAW data in SQL Server Management Studio.
 >See **Database_Setup.sql** in *scripts* file
 
-<br>
-
 ## Data cleaning <a name="cleansed"></a>
 Drie schema's maken in de VisionAirport_OLTP database:
 - RAW: de één op één ingeladen data in SSMS
 - ARCHIVED: dirty data van RAW schema in deze schema steken
 - CLEANSED: alle data van de RAW schema min de data van de ARCHIVED schema
 
-<br>
-
 ## Data Warehouse creatie scripts <a name="dwh"></a>
 In SSMS de juiste dataypes en relaties leggen (PK, FK, ...)
-1. Maak alle CLEANSED-tabellen aan met de juiste datatypes en PK's. (Zie **Create_Cleansed_Tables.sql** script)
-2. Vul de CLEANSED-tabellen met data van de RAW-tabellen. (Zie **Cleanse_*.sql** scripts)
-3. Leg de FK's
 
-<br>
+### 1. Create cleansed tables
+Maak alle CLEANSED-tabellen aan met de juiste datatypes en PK's.
+>Zie **Create_Cleansed_Tables.sql** script
+
+### 2. Insert cleansed tables
+Vul de CLEANSED-tabellen met data van de RAW-tabellen.
+>Zie **Cleanse_*.sql** scripts
+
+### 3. Leg FK's, verwijder duplicates, ...
+(TO DO)
 
 ## Data inladen in DWH met SSIS <a name="ssis"></a>
 Eerst Full Load, dan Incremental Load.
-
-<br>
 
 ## Analyseren met PowerBI <a name="powerbi"></a>
 Aan de hand van de data die ingeladen werd in het datawarehouse, maken we het dashboard.
