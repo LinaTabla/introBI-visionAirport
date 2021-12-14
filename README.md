@@ -18,7 +18,7 @@ Import RAW data in SQL Server Management Studio.
 
 ## Data cleaning <a name="cleansed"></a>
 Drie schema's maken in de VisionAirport_OLTP database:
-- RAW: import data van stap 1 in deze schema
+- RAW: de één op één ingeladen data in SSMS
 - ARCHIVED: dirty data van RAW schema in deze schema steken
 - CLEANSED: alle data van de RAW schema min de data van de ARCHIVED schema
 
