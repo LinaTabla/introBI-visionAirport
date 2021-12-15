@@ -55,14 +55,17 @@ In de [Database_Setup](#databasesetup) hebben we in de VisionAirport_OLTP databa
 
 Om de data in de juiste schema's te krijgen moeten er een aantal queries uitgevoerd worden. Deze queries vind je in de [scripts](./scripts) folder en worden in twee stappen uitgevoerd:
 <br>
-1. Voer de [Create_Cleansed_Tables.sql](./scripts/Create_Cleansed_Tables.sql) script uit in SSMS. Deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
+1. Voer de [Create_Cleansed_Tables.sql](./scripts/Create_Cleansed_Tables.sql) script uit in de *VisionAirport_OLTP* database. Deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
 2. Voer alle [Cleanse_*.sql](./scripts) scripts uit in SSMS. 
 Deze scripts vullen alle CLEANSED-tabellen met de data van de RAW schema. De data wordt hier gecleaned door de datatypes in het juiste type te converteren, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen. De data die we er uit halen verplaatsen we naar de ARCHIVE schema.
 >Momenteel maakt de volgorde waarin we de scripts uitvoeren nog niet uit omdat we nog geen FK's gelegd hebben. Eens dit gebeurd is passen we dit aan in deze README.md.
 <br>
 
 ## Data Warehouse creatie scripts <a name="dwh"></a>
-In deze stap beginnen we aan de DWH. Maak een nieuwe database aan genaamd **VisionAirport_DWH*. In deze database gaan we zuivere data vanuit SSIS inladen. 
+In deze stap beginnen we aan de DWH. Om data vanuit SSIS terug in te laden in SSMS moeten we volgende stappen uitvoeren:
+1. Maak in SSMS een nieuwe database aan genaamd *VisionAirport_DWH*. In deze database gaan we zuivere data inladen.
+2. Voer de [Create_DWH_Tables.sql](./scripts/Create_DWH_Tables.sql) script uit in de *VisionAirport_DWH* database.
+>Enkel nog gedaan voor Vlucht
 
 ## Data inladen in DWH met SSIS <a name="ssis"></a>
 Eerst Full Load, dan Incremental Load.
