@@ -7,6 +7,6 @@ INSERT INTO [CLEANSED].[vliegtuig]
 		NULLIF(CAST(Vliegtuigtype AS varchar(8)), ''),
 		NULLIF(CAST(Bouwjaar AS int), '')
 	FROM [RAW].[export_vliegtuig]
-	WHERE Airlinecode IS NOT NULL;
+	WHERE Airlinecode IS NULL;
 
 select * from CLEANSED.[vliegtuig];
