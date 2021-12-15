@@ -31,8 +31,12 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 - Visual Studio 2019
 - Microsoft Power BI
 
+<br>
+
 ## Database setup <a name="databasesetup"></a>
 De eerste stap is het creëren van de OLTP database en de verschillende schema's. Voer de [Database_Setup.sql](./scripts/Database_Setup.sql) script uit in SSMS om de *RAW*, *CLEANSED* en *ARCHIVE* schema's en de *VisionAirport_OLTP* database aan te maken.
+
+<br>
 
 ## Data importing <a name="raw"></a>
 Nadat de schema's en de VisionAirport_OLTP database zijn aangemaakt, importeren we de flat files. Deze import gebeurd via Import Wizard in SSMS.
@@ -60,13 +64,14 @@ Om de data in de juiste schema's te krijgen moeten er een aantal queries uitgevo
 Deze scripts vullen alle CLEANSED-tabellen met de data van de RAW schema. De data wordt hier gecleaned door de datatypes in het juiste type te converteren, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen.
 >Momenteel maakt de volgorde waarin we de cleanse_*.sql scripts uitvoeren nog niet uit omdat we nog geen FK's gelegd hebben. Eens dit gebeurd is passen we dit aan in deze README.md.
 3. Voer de [Create_Archive.sql](./scripts/Create_Archive.sql) script uit in SSMS. Deze script kopieert de structuur van de RAW-schema. De duplicates, irrelevante data en corrupte data komt hierin terecht.
+
 <br>
 
 ## Data Warehouse creatie scripts <a name="dwh"></a>
 In deze stap beginnen we aan de DWH. Om data vanuit SSIS terug in te laden in SSMS moeten we volgende stappen uitvoeren:
 1. Maak in SSMS een nieuwe database aan genaamd *VisionAirport_DWH*. In deze database gaan we zuivere data inladen.
 2. Voer de [Create_DWH_Tables.sql](./scripts/Create_DWH_Tables.sql) script uit in de *VisionAirport_DWH* database.
->Enkel nog gedaan voor Vlucht
+> Script bestaat nog niet. Enkel nog gedaan voor Vlucht.
 
 ## Data inladen in DWH met SSIS <a name="ssis"></a>
 Eerst Full Load, dan Incremental Load.
