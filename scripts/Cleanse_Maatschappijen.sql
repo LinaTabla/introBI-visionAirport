@@ -10,3 +10,7 @@ INSERT INTO [CLEANSED].maatschappijen
 	OR ICAO  NOT LIKE '%[&;?\^-+]%'
 
 	select * from cleansed.maatschappijen
+
+/*
+Bepaalde maatschappijen worden eruit gehaald omdat er een foreign key gelegd wordt naar primary keys die niet bestaan (zie: tabel vliegtuigtype)
+*/
