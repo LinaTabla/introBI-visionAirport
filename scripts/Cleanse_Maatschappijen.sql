@@ -1,12 +1,12 @@
 use VisionAiport_OLTP;
 
-INSERT INTO [CLEANSED].maatschappijen
+INSERT INTO [CLEANSED].maatschappijen2
 	SELECT 
 	CAST(Name as varchar(50)), 
-	NULLIF(CAST(IATA AS varchar(10)), ''),
-	NULLIF(CAST(ICAO AS varchar(10)), '')
-	FROM [RAW].[export_maatschappijen]
+	NULLIF(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(CAST(IATA AS varchar(2)), '?', ''), '+', ''), ';', ''), '"', ''), '^', ''), '-', ''), '\N', ''), '') IATA, 
+        NULLIF(REPLACE(REPLACE(REPLACE(REPLACE(CAST(ICAO AS varchar(3)), '+', ''), '-', ''), 'N/A', ''), '\N', ''), '') ICAO 
+        FROM [RAW].[export_maatschappijen]
 	WHERE IATA  NOT LIKE '%[&;?\^-+]%'
-	OR ICAO  NOT LIKE '%[&;?\^-+]%';
+	OR ICAO  NOT LIKE '%[&;?\^-+]%'
 
 	select * from cleansed.maatschappijen
