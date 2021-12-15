@@ -23,8 +23,32 @@ INSERT INTO [CLEANSED].[vlucht]
 		NULLIF(CAST(DestCode AS varchar(3)), ''),
 		NULLIF(CAST(Vliegtuigcode AS varchar(8)), ''),
 		NULLIF(CAST(Datum AS date), '')
-	FROM [RAW].[export_vlucht];
-
+	FROM [RAW].[export_vlucht]
+	WHERE 
+		Vluchtid IS NOT NULL
+		AND Vluchtnr IS NOT NULL 
+		AND Airlinecode IS NOT NULL
+		AND Destcode IS NOT NULL
+		AND Vliegtuigcode IS NOT NULL
+		AND Datum IS NOT NULL;
+		
+-- 2. Insert data from RAW to ARCHIVE 
+INSERT INTO ARCHIVE.[vlucht]
+	SELECT 
+		CAST(VluchtId AS int),
+		NULLIF(CAST(VluchtNr AS varchar(7)), ''),
+		NULLIF(CAST(AirlineCode AS varchar(3)), '-'),	-- dash used instead of null
+		NULLIF(CAST(DestCode AS varchar(3)), ''),
+		NULLIF(CAST(Vliegtuigcode AS varchar(8)), ''),
+		NULLIF(CAST(Datum AS date), '')
+	FROM [RAW].[export_vlucht]
+	where 
+		Vluchtid IS NULL
+		OR Vluchtnr IS NULL 
+		OR Airlinecode IS NULL
+		OR Destcode IS NULL
+		OR Vliegtuigcode IS NULL
+		OR Datum IS NULL;
 
 -- 4. Create VisionAirport_DWH db
 
