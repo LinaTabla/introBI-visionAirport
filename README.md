@@ -26,7 +26,7 @@ Dit project bestaat uit vijf grote stappen:
 
 ## Data importing <a name="raw"></a>
 Import RAW data in SQL Server Management Studio.
->See **Database_Setup.sql** in *scripts* file
+>See **Database_Setup.sql** in *scripts* file  
 >In the flat file "exports_luchthavens.txt" you'll have to set the first column to nvarchar(MAX)
 <br>
 
