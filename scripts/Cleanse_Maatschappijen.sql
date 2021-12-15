@@ -1,6 +1,4 @@
-use VisionAiport_OLTP;
-
-	INSERT INTO [CLEANSED].[maatschappijen]
+INSERT INTO [CLEANSED].[maatschappijen]
 	SELECT *
 	FROM (
 		SELECT 
@@ -22,8 +20,3 @@ use VisionAiport_OLTP;
 		AND Name <> 'Turkish Airlines Cargo'
 		AND Name <> 'Emirates SkyCargo'
 		AND Name <> 'Emirates SkyCargo';
-	select * from cleansed.maatschappijen
-
-/*
-Bepaalde maatschappijen worden eruit gehaald omdat er een foreign key gelegd wordt naar primary keys die niet bestaan (zie: tabel vliegtuigtype)
-*/
