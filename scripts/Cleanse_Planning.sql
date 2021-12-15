@@ -9,3 +9,5 @@ INSERT INTO [CLEANSED].Planning
 		NULLIF(CAST(Plangate AS varchar(10)), ''),
 		NULLIF(CAST(Plantijd AS datetime), '')
 	FROM [RAW].[export_planning];
+
+-- Planterminal, Plangate, Plantijd -> mag op NULL staan
