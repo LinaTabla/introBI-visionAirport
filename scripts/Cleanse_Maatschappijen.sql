@@ -1,6 +1,6 @@
 use VisionAiport_OLTP;
 
-INSERT INTO [CLEANSED].maatschappijen2
+INSERT INTO [CLEANSED].maatschappijen
 	SELECT 
 	CAST(Name as varchar(50)), 
 	NULLIF(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(CAST(IATA AS varchar(2)), '?', ''), '+', ''), ';', ''), '"', ''), '^', ''), '-', ''), '\N', ''), '') IATA, 
