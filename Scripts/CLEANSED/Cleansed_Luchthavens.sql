@@ -1,3 +1,5 @@
+USE [VisionAirport_OLTP];
+
 INSERT INTO [CLEANSED].[luchthavens]
 	SELECT *	
 	FROM (

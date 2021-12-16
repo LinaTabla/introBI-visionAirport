@@ -1,6 +1,6 @@
 USE [VisionAirport_OLTP];
 
-INSERT INTO [CLEANSED].banen
+INSERT INTO [CLEANSED].[banen]
 	SELECT 
 		CAST(Baannummer AS int),
 		CAST(Code AS varchar(7)),
