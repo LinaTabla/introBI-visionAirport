@@ -44,6 +44,7 @@ Volg deze stappen voor elke flat file:
 6. Verander het Data Type voor elke kolom-naam naar **nvarchar(50)** en vink **Allow Nulls** aan voor alle kolommen
 7. Klik op Next > Finish > Close
 >Let op: bij import van de **exports_luchthavens.txt** file moet je het datatype van de kolom **Airline** op **nvarchar(MAX)** zetten in plaats van nvarchar(50).
+<br>
 >Let op: bij import van de **exports_vliegtuigtype.txt** file moet je het datatype van de kolom **Type** op **nvarchar(100)** laten.
 
 <br>
