@@ -1,37 +1,13 @@
 # Vision Airport project: handleiding
+In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen en uitvoeren. 
 
-<br>
+**Installeer vooraf onderstaande software:**
+- SQL Server Management Studio (SSMS)
+- Visual Studio 2019
+  - SQL Server Integration Services
+- Microsoft Power BI
 
-**TODO:**
-<br>
-
-*Youssef*
-- [ ] Create all CLEANSE-tables
-- [ ] Analyse, cleanse and fill cleansed data in all the CLEANSE-tables
-- [ ] Transfer and fill dirty data in ARCHIVE-tables
-
-*Lina*
-- [ ] Cleaning: foreign keys + identities + increment
-- [ ] Create/transfer all DWH tables from OLTP db to DWH db
-- [ ] SSIS: configuratie
-- [ ] SSIS: zuivere data in DWH laden
-
-*Wout*
-- [ ] Dashboard PowerBI
-
-*Jonas*
-- [ ] Documentatie
-- [ ] Powerpoint
-
-*Algemeen + eventueel nog te cleanen*
-- [ ] Datatypes in [Create_Cleansed_Tables.sql](./scripts/Create_Cleansed_Tables.sql) nakijken
-- [ ] UTF-8 varchar string decoden > if ASCII or null > do nothing
-- [ ] Delete duplicates luchthavens
-
-<br>
-
-# Introductie
-In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen en uitvoeren. De handleiding bestaat uit vijf stappen:
+De handleiding bestaat uit vijf stappen:
 1. [Database setup](#databasesetup)
 2. [Data importing](#raw)
 3. [Data cleaning](#cleansed)
@@ -39,13 +15,6 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
    * [DWH setup in SSMS](#ssms)
    * [Data inladen in DWH met SSIS](#ssis)
 5. [Analyseren met PowerBI](#powerbi)
-
-## Nodige software
-Om deze handleiding te kunnen volgen dient u volgende software op je lokale machine te installeren:
-- SQL Server Management Studio (SSMS)
-- Visual Studio 2019
-  - SQL Server Integration Services
-- Microsoft Power BI
 
 <br>
 
