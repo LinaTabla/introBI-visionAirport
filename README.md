@@ -11,7 +11,7 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 
 <br>
 
-De handleiding bestaat uit vijf stappen:
+**De handleiding bestaat uit vijf stappen:**
 1. [Database setup](#databasesetup)
 2. [Data importing](#raw)
 3. [Data cleaning](#cleansed)
