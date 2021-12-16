@@ -6,11 +6,14 @@
 <br>
 
 *Youssef*
-- [ ] Create and cleanse all tables algemeen (Youssef)
+- [ ] Create all CLEANSE-tables
+- [ ] Analyse, cleanse and fill cleansed data in all the CLEANSE-tables
+- [ ] Transfer and fill dirty data in ARCHIVE-tables
 
 *Lina*
-- [ ] Cleaning: foreign keys
-- [ ] SSMS: create DWH tables
+- [ ] Cleaning: foreign keys + identities + increment
+- [ ] Create/transfer all DWH tables from OLTP db to DWH db
+- [ ] SSIS: configuratie
 - [ ] SSIS: zuivere data in DWH laden
 
 *Wout*
