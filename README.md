@@ -2,17 +2,24 @@
 
 <br>
 
-TODO
-- [ ] Create and cleanse all tables algemeen (Youssef)
+**TODO**
+- Youssef
+ - [ ] Create and cleanse all tables algemeen (Youssef)
+
 - [ ] Cleansing scripts: 
-  * [ ] Foreign keys (Lina)
-  * [ ] UTF-8 varchar string decoden > if ASCII or null > do nothing
-  * [ ] Delete duplicates 
-- [ ] SSIS: insert **actual** data in DWH (Lina)
-- [ ] Incremental & full Load SSIS
-- [ ] Dashboard (Wout)
-- [ ] Documentatie (Jonas)
-- [ ] Powerpoint (Jonas)
+ * [ ] Foreign keys (Lina)
+ * [ ] UTF-8 varchar string decoden > if ASCII or null > do nothing
+ * [ ] Delete duplicates luchthavens
+
+- Lina
+ - [ ] SSMS: create DWH tables
+
+- Wout
+ - [ ] Dashboard PowerBI
+
+- Jonas
+ - [ ] Documentatie
+ - [ ] Powerpoint
 
 # Introductie
 In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen. De handleiding bestaat uit vijf stappen:
