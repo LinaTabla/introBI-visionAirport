@@ -14,10 +14,6 @@ INSERT INTO [CLEANSED].aankomst
 	FROM [RAW].[export_aankomst]
 	WHERE Vluchtid != '1,00E+06'
 	OR Terminal IS NULL
-	OR Gate IS NULL
-	OR Baan IS NULL
-	OR Bezetting IS NULL
-	OR Vracht IS NULL
-	OR Aankomsttijd IS NULL;
+	
 
 select * from raw.export_aankomst;
