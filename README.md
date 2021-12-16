@@ -1,11 +1,15 @@
 # Vision Airport project: handleiding
 In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen en uitvoeren. 
 
+<br>
+
 **Installeer vooraf onderstaande software:**
 - SQL Server Management Studio (SSMS)
 - Visual Studio 2019
   - SQL Server Integration Services
 - Microsoft Power BI
+
+<br>
 
 De handleiding bestaat uit vijf stappen:
 1. [Database setup](#databasesetup)
