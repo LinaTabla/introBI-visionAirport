@@ -1,159 +1,170 @@
-Use VisionAiport_OLTP;
-
-
--- Aankomst
-CREATE TABLE CLEANSED.aankomst
-	(
-	Vluchtid int NULL,
-	Vliegtuigcode nchar(10) NULL,
-	Terminal nchar(5) NULL,
-	Gate nchar(5) NULL,
-	Baan int NULL,
-	Bezetting int NULL,
-	Vracht nchar(5) NULL,
-	Aankomsttijd datetime NULL
-	);
-
--- Banen
-CREATE TABLE CLEANSED.banen
-	(
-	Baannummer int NULL,
-	Code nchar(10) NULL,
-	Naam nchar(50) NULL,
-	Lengte int NULL
-	);
-
--- Klant
-CREATE TABLE CLEANSED.klant
-	(
-	Vluchtid int NULL,
-	Operatie decimal(18, 2) NULL,
-	Faciliteiten decimal(18, 2) NULL,
-	Shops decimal(18, 2) NULL
-	)
-
--- Luchthavens
-CREATE TABLE CLEANSED.luchthavens
-	(
-	Airport nvarchar(100) NULL,
-	City nvarchar(50) NULL,
-    Country nvarchar(40) NULL,
-	IATA nchar(10) NULL,
-	ICAO nchar(10) NULL,
-	Lat decimal(11, 9) NULL,
-	Lon decimal(11, 9) NULL,
-	Alt int NULL,
-	TZ decimal(4, 3) NULL,
-	DST nchar(3) NULL,
-	T_Z varchar(50) NULL
-	);
+USE [VisionAirport_OLTP];
 
 -- Maatschappijen
-CREATE TABLE CLEANSED.maatschappijen
-	(
-	Name varchar(50) NULL,
-	IATA nchar(10) NULL,
-	ICAO nchar(10) NULL
-	);
+DROP TABLE IF EXISTS [CLEANSED].[maatschappijen];
+CREATE TABLE [CLEANSED].[maatschappijen]
+(
+	Name varchar(50)	NOT NULL	PRIMARY KEY,
+	IATA varchar(10)	NULL,
+	ICAO varchar(10)	NULL
+);
 
--- Planning
-CREATE TABLE CLEANSED.Planning
-	(
-	Vluchtnr nchar(10) NULL,
-	airlinecode nchar(10) NULL,
-	Destcode nchar(5) NULL,
-	Planterminal nchar(3) NULL,
-	Plangate nchar(3) NULL,
-	Plantijd datetime NULL
-	);
+--Vliegtuigtype
+DROP TABLE IF EXISTS [CLEANSED].[vliegtuigtype];
+CREATE TABLE [CLEANSED].[vliegtuigtype]
+(
+	IATA		char(3)		NOT NULL	PRIMARY KEY,
+	ICAO		varchar(4)	NULL,
+	Merk		varchar(50) NULL,
+	Type		varchar(100) NULL,
+	Wake		varchar(5)	NULL,
+	Cat			varchar(20) NULL,
+	Capaciteit	int			NULL,
+	Vracht		int			NULL
+);
+
+-- Vliegtuig
+DROP TABLE IF EXISTS [CLEANSED].[vliegtuig];
+CREATE TABLE [CLEANSED].[vliegtuig]
+(
+	Vliegtuigcode	varchar(8)	NOT NULL	PRIMARY KEY,
+	Airlinecode		char(5)		NULL,
+	Vliegtuigtype	varchar(3)	NULL,
+	Bouwjaar		int			NULL
+);
+
+-- Banen
+DROP TABLE IF EXISTS [CLEANSED].[banen];
+CREATE TABLE [CLEANSED].[banen]
+(
+	Baannummer	int			NOT NULL PRIMARY KEY,
+	Code		varchar(7)	NULL,
+	Naam		varchar(50) NULL,
+	Lengte		int			NULL
+);
 
 -- Vertrek
-CREATE TABLE CLEANSED.Vertrek
-	(
-	Vluchtid int NULL,
-	Vliegtuigcode char(10) NULL,
-	Terminal char(2) NULL,
-	Gate nchar(3) NULL,
-	Baan int NULL,
-	Bezetting int NULL,
-	Vracht int NULL,
-	Vertrektijd datetime NULL
-	);
-	
--- Vliegtuig
-CREATE TABLE CLEANSED.Vliegtuig
-	(
-	Airlinecode nchar(10) NULL,
-	Vliegtuigcode nchar(10) NULL,
-	Vliegtuigtype nchar(5) NULL,
-	Bouwjaar int NULL
-	);
-	
---Vliegtuigtype
-CREATE TABLE CLEANSED.Vliegtuigtype
-	(
-	IATA nchar(10) NULL,
-	ICAO nchar(10) NULL,
-	Merk nvarchar(50) NULL,
-	Type nvarchar(100) NULL,
-	Wake nchar(5) NULL,
-	Cat nchar(20) NULL,
-	Capaciteit int NULL,
-	Vracht int NULL
-	);
+DROP TABLE IF EXISTS [CLEANSED].[vertrek];
+CREATE TABLE [CLEANSED].[vertrek]
+(
+	Vluchtid		int			NOT NULL PRIMARY KEY,
+	Vliegtuigcode	varchar(10) NULL,
+	Terminal		char(1)		NULL,
+	Gate			char(2)		NULL,
+	Baan			int			NULL,
+	Bezetting		int			NULL,
+	Vracht			int			NULL,
+	Vertrektijd		datetime	NULL
+);
+
+-- Aankomst
+DROP TABLE IF EXISTS [CLEANSED].[aankomst];
+CREATE TABLE [CLEANSED].[aankomst]
+(
+	Vluchtid		int			NOT NULL	PRIMARY KEY,
+	Vliegtuigcode	varchar(10) NULL,
+	Terminal		char(1)		NULL,
+	Gate			char(2)		NULL,
+	Baan			int			NULL,
+	Bezetting		int			NULL,
+	Vracht			int			NULL,
+	Aankomsttijd	datetime	NULL
+);
+
+-- Klant
+DROP TABLE IF EXISTS [CLEANSED].[klant];
+CREATE TABLE [CLEANSED].[klant]
+(
+	Vluchtid		int		NOT NULL	PRIMARY KEY,
+	Operatie		float	NULL,
+	Faciliteiten	float	NULL,
+	Shops			float	NULL
+)
+
+-- Luchthavens
+DROP TABLE IF EXISTS [CLEANSED].[luchthavens];
+CREATE TABLE [CLEANSED].[luchthavens]
+(
+	Airportid	int				NOT NULL	PRIMARY KEY,
+	Airport		varchar(100)	NULL,
+	City		varchar(50)		NULL,
+    Country		varchar(50)		NULL,
+	IATA		char(3)			NULL,
+	ICAO		char(4)			NULL,
+	Lat			float			NULL,
+	Lon			float			NULL,
+	Alt			int				NULL,
+	TZ			float			NULL,
+	DS			char(1)			NULL,
+	T_Z			varchar(50)		NULL
+);
+
+-- Planning
+DROP TABLE IF EXISTS [CLEANSED].[planning];
+CREATE TABLE [CLEANSED].[planning]
+(
+	Vluchtnr		varchar(8)	NOT NULL PRIMARY KEY,
+	Airlinecode		varchar(3)	NOT NULL,
+	Destcode		char(3)		NOT NULL,
+	Planterminal	char(1)		NULL,
+	Plangate		char(2)		NULL,
+	Plantijd		time		NULL
+);
 
 -- Vlucht
-CREATE TABLE CLEANSED.Vlucht
-	(
-	Vluchtid int NULL,
-	Vluchtnr nvarchar(20) NULL,
-	Airlinecode nchar(5) NULL,
-	Destcode nchar(5) NULL,
-	Vliegtuigcode nchar(10) NULL,
-	Datum date NULL
-	);
+DROP TABLE IF EXISTS [CLEANSED].[vlucht];
+CREATE TABLE [CLEANSED].[vlucht]
+(
+	Vluchtid		int			NOT NULL	PRIMARY KEY,
+	Vluchtnr		varchar(7)	NULL,
+	Airlinecode		varchar(3)	NULL,
+	Destcode		varchar(3)	NULL,
+	Vliegtuigcode	varchar(8)	NULL,
+	Datum			datetime	NULL
+);
 
 -- Weer
-CREATE TABLE CLEANSED.weer
-	(
-	Datum date NULL,
-	DDVEC int NULL,
-	FHVEC int NULL,
-	FG int NULL,
-	FHX int NULL,
-	FHXH int NULL,
-	FHN int NULL,
-	FHNH int NULL,
-	FXX int NULL,
-	FXXH int NULL,
-	TG int NULL,
-	TN int NULL,
-	TNH int NULL,
-	TX int NULL,
-	TXH int NULL,
-	T10N int NULL,
-	T10NH int NULL,
-	SQ int NULL,
-	SP int NULL,
-	Q int NULL,
-	DR int NULL,
-	RH int NULL,
-	RHX int NULL,
-	RHXH int NULL,
-	PG int NULL,
-	PX int NULL,
-	PXH int NULL,
-	PN int NULL,
-	PNH int NULL,
-	VVN int NULL,
-	VVNH int NULL,
-	VVX int NULL,
-	VVXH int NULL,
-	NG int NULL,
-	UG int NULL,
-	UX int NULL,
-	UXH int NULL,
-	UN int NULL,
-	UNH int NULL,
-	EV2 int NULL
-	);
+DROP TABLE IF EXISTS [CLEANSED].[weer];
+CREATE TABLE [CLEANSED].[weer]
+(
+	Datum	date	NOT NULL	PRIMARY KEY,
+	DDVEC	int		NULL,
+	FHVEC	int		NULL,
+	FG		int		NULL,
+	FHX		int		NULL,
+	FHXH	int		NULL,
+	FHN		int		NULL,
+	FHNH	int		NULL,
+	FXX		int		NULL,
+	FXXH	int		NULL,
+	TG		int		NULL,
+	TN		int		NULL,
+	TNH		int		NULL,
+	TX		int		NULL,
+	TXH		int		NULL,
+	T10N	int		NULL,
+	T10NH	int		NULL,
+	SQ		int		NULL,
+	SP		int		NULL,
+	Q		int		NULL,
+	DR		int		NULL,
+	RH		int		NULL,
+	RHX		int		NULL,
+	RHXH	int		NULL,
+	PG		int		NULL,
+	PX		int		NULL,
+	PXH		int		NULL,
+	PN		int		NULL,
+	PNH		int		NULL,
+	VVN		int		NULL,
+	VVNH	int		NULL,
+	VVX		int		NULL,
+	VVXH	int		NULL,
+	NG		int		NULL,
+	UG		int		NULL,
+	UX		int		NULL,
+	UXH		int		NULL,
+	UN		int		NULL,
+	UNH		int		NULL,
+	EV2		int		NULL
+);
