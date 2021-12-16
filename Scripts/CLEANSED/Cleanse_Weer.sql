@@ -1,4 +1,4 @@
-use VisionAiport_OLTP;
+USE [VisionAirport_OLTP];
 
 INSERT INTO [CLEANSED].[weer]
 	SELECT 
@@ -43,6 +43,3 @@ INSERT INTO [CLEANSED].[weer]
 		CAST(UNH AS int),
 		CAST(EV2 AS int)
 	FROM [RAW].[export_weer];
-
-	
-

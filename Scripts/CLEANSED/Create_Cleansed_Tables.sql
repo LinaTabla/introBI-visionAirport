@@ -29,8 +29,8 @@ DROP TABLE IF EXISTS [CLEANSED].[vliegtuig];
 CREATE TABLE [CLEANSED].[vliegtuig]
 (
 	VliegtuigCode	varchar(8)	NOT NULL	PRIMARY KEY,
-	AirlineCode	varchar(5)	NULL,
 	VliegtuigType	char(3)	NOT NULL,
+	AirlineCode	varchar(5)	NULL,
 	Bouwjaar	int	NULL,
 	FOREIGN KEY (VliegtuigType) REFERENCES [CLEANSED].[vliegtuigtype](IATA)
 );
@@ -65,7 +65,7 @@ CREATE TABLE [CLEANSED].[aankomst]
 	VliegtuigCode	varchar(10)	NULL,
 	Terminal	char(1)	NULL,
 	Gate	char(2)	NULL,
-	Baan	int	NOT NULL,
+	Baan	int	NULL,
 	Bezetting	int	NULL,
 	Vracht	int	NULL,
 	Aankomsttijd	datetime	NULL,
@@ -81,7 +81,7 @@ CREATE TABLE [CLEANSED].[vertrek]
 	Vliegtuigcode	varchar(10)	NULL,
 	Terminal	char(1)	NULL,
 	Gate	char(2)	NULL,
-	Baan	int	NOT NULL,
+	Baan	int NULL,
 	Bezetting	int	NULL,
 	Vracht	int	NULL,
 	Vertrektijd	datetime	NULL,
@@ -114,7 +114,7 @@ CREATE TABLE [CLEANSED].[luchthavens]
 	Longitude	float	NULL,
 	Altitude	int	NULL,
 	TZ	float	NULL,
-	DS	char(1)	NULL,
+	DST	char(1)	NULL,
 	Area	varchar(100)	NULL
 );
 
@@ -134,7 +134,7 @@ CREATE TABLE [CLEANSED].[planning]
 DROP TABLE IF EXISTS [CLEANSED].[weer];
 CREATE TABLE [CLEANSED].[weer]
 (
-	Datum	date	NOT NULL	PRIMARY KEY,
+	Datum	datetime	NOT NULL	PRIMARY KEY,
 	DDVEC	int	NULL,
 	FHVEC	int	NULL,
 	FG	int	NULL,

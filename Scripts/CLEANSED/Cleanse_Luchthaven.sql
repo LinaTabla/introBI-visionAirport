@@ -1,20 +1,18 @@
 INSERT INTO [CLEANSED].[luchthavens]
 	SELECT *	
 	FROM (
-		SELECT 
+		SELECT
 			CAST(Airport AS varchar(100)) Naam,
 			CAST(City AS varchar(50)) Stad,
-			CAST(Country AS varchar(40)) Land,
-			NULLIF(CAST(IATA AS varchar(10)), '') IATA,
-			NULLIF(REPLACE(CAST(ICAO AS varchar(10)), '\N', ''), '') ICAO,
-			CAST(Lat AS decimal(11, 9)) Latitude,
-			CAST(Lon AS decimal(11, 9)) Longitude,
+			CAST(Country AS varchar(50)) Land,
+			NULLIF(CAST(IATA AS char(3)), '') IATA,
+			NULLIF(REPLACE(CAST(ICAO AS char(4)), '\N', ''), '') ICAO,
+			CAST(Lat AS float) Latitude,
+			CAST(Lon AS float) Longitude,
 			CAST(Alt AS int) Altidue,
-			CAST(TZ AS decimal(4, 3)) TZ,
-			CAST(DST AS char(3)) DST,
-			NULLIF(REPLACE(CAST(Tz1 AS varchar(50)), '\N', ''), '') Tz1
-
-
+			CAST(TZ AS float) TZ,
+			CAST(DST AS char(1)) DST,
+			NULLIF(REPLACE(CAST(Tz1 AS varchar(100)), '\N', ''), '') Area
 		FROM [RAW].[export_luchthavens]
-	) AS luchthavens
+	) AS export_luchthavens
 	WHERE ICAO IS NOT NULL 

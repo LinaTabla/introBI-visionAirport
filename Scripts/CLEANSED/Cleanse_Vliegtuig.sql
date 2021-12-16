@@ -1,12 +1,9 @@
-use VisionAiport_OLTP;
+USE [VisionAirport_OLTP];
 
 INSERT INTO [CLEANSED].[vliegtuig]
 	SELECT 
-		NULLIF(CAST(AirlineCode AS varchar(3)), '-'),	-- dash used instead of null		
-		NULLIF(CAST(Vliegtuigcode AS varchar(8)), ''),
-		NULLIF(CAST(Vliegtuigtype AS varchar(8)), ''),
+		NULLIF(CAST(VliegtuigCode AS varchar(8)), ''),
+		NULLIF(CAST(VliegtuigType AS char(3)), ''),
+		NULLIF(CAST(AirlineCode AS varchar(5)), '-'),		
 		NULLIF(CAST(Bouwjaar AS int), '')
-	FROM [RAW].[export_vliegtuig]
-	WHERE Airlinecode IS NULL;
-
-select * from CLEANSED.[vliegtuig];
+	FROM [RAW].[export_vliegtuig];

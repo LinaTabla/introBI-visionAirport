@@ -1,14 +1,9 @@
-use VisionAiport_OLTP;
+USE [VisionAirport_OLTP];
 
-
-INSERT INTO [CLEANSED].klant
+INSERT INTO [CLEANSED].[klant]
 	SELECT 
-	CAST(Vluchtid AS int),
-	CAST(Operatie AS decimal(18,2)),
-	CAST(Faciliteiten AS decimal(18,2)),
-	NULLIF(CAST(Shops AS decimal(18,2)), '')
+		CAST(Vluchtid AS int),
+		CAST(Operatie AS float),
+		CAST(Faciliteiten AS float),
+		NULLIF(CAST(Shops AS float), 0)
 	FROM [RAW].[export_klant]
-	WHERE Shops IS NOT NULL;
-
-
-select * from CLEANSED.klant;

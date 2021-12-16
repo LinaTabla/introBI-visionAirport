@@ -1,19 +1,14 @@
-use VisionAiport_OLTP;
+USE [VisionAirport_OLTP];
 
-
-INSERT INTO [CLEANSED].aankomst
+INSERT INTO [CLEANSED].[vertrek]
 	SELECT 
-	NULLIF(CAST(Vluchtid AS int), ''), --Check this out!
-	NULLIF(CAST(Vliegtuigcode AS varchar(10)), ''),
-	NULLIF(CAST(Terminal AS varchar(10)), ''),
-	NULLIF(CAST(Gate AS varchar(10)), ''),
-	NULLIF(CAST(Baan AS int), ''),
-	NULLIF(CAST(Bezetting AS int), ''),
-	NULLIF(CAST(Vracht AS varchar(10)), ''),
-	NULLIF(CAST(Aankomsttijd AS datetime), '')
-	FROM [RAW].[export_aankomst]
-	WHERE Vluchtid != '1,00E+06'
-	OR Terminal IS NULL
-	
-
-select * from raw.export_aankomst;
+		CAST(CAST(REPLACE(VluchtId, ',', '.') AS float) AS int),
+		CAST(VliegtuigCode AS varchar(10)), 
+		NULLIF(CAST(Terminal AS char(1)), ''), 
+		NULLIF(CAST(Gate AS char(2)), ''), 
+		NULLIF(CAST(Baan AS int), ''), 
+		NULLIF(CAST(Bezetting AS int), ''), 
+		NULLIF(CAST(Vracht AS int), ''), 
+		NULLIF(CAST(Vertrektijd AS datetime), '')			
+	FROM [RAW].[export_vertrek]
+	WHERE NULLIF(CAST(Vertrektijd AS datetime), '') IS NOT NULL;
