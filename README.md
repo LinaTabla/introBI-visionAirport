@@ -57,10 +57,10 @@ In de [database setup](#databasesetup) hebben we in de *VisionAirport_OLTP* data
 | **CLEANSED** | De data die écht van belang is en *gecleaned* is. De gezuiverde data wordt gebruikt voor de [DWH](#dwh). |
 | **ARCHIVED** | Alle data van de RAW schema die nutteloos, dubbel of corrupt is. |
 
-Om de data in de juiste schema's te krijgen moeten er een aantal scripts uitgevoerd worden in SSMS. Deze scripts vind je in de [scripts](./scripts) folder en worden in twee stappen uitgevoerd:
+Om de data in de juiste schema's te krijgen moeten er een aantal scripts uitgevoerd worden in SSMS. Deze scripts vind je in de [*Scripts*](./Scripts) folder en worden in twee stappen uitgevoerd:
 <br>
-1. Voer de [Create_Cleansed_Tables.sql](./scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit in in SSMS. Deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
-2. Voer alle [Cleanse_*.sql](./scripts/CLEANSED) scripts uit in SSMS.
+1. Voer de [Create_Cleansed_Tables.sql](./Scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit in in SSMS. Deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
+2. Voer vervolgens alle [Cleanse_*.sql](./Scripts/CLEANSED) scripts uit in SSMS.
 Deze scripts vullen alle tabellen in de CLEANSED-schema met de data van de RAW-schema. Echter wordt de data wordt hier vooraf gecleaned door het juiste datatype toe te wijzen, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen.
 >Momenteel maakt de volgorde waarin we de cleanse_*.sql scripts uitvoeren nog niet uit omdat we nog geen FK's gelegd hebben. Eens dit gebeurd is passen we dit aan in deze README.md.
 3. Voer de [Create_Archive.sql](./scripts/ARCHIVE/Create_Archive.sql) script uit in SSMS. Deze script kopieert de structuur van de tabellen in de RAW-schema om de tabellen in de ARCHIVE-schema aan te maken. Alle records die duplicates, irrelevante data en corrupte data bevatten, komen hierin terecht.
