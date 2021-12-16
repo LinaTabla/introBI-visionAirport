@@ -23,19 +23,19 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 <br>
 
 ## Database setup <a name="databasesetup"></a>
-In dit project maken we gebruik van twee databases: *VisionAirport_OLTP* en *VisionAirport_DWH*. 
+In dit project maken we gebruik van twee databases: *VisionAirport_OLTP* en *VisionAirport_DWH*.
 De *VisionAirport_OLTP* heeft daarbovenop drie schema's waarin we gaan werken.
 <br>
 
-Voer de [Database_Setup.sql](./scripts/Database_Setup.sql) script uit in SSMS om:
-- de *VisionAirport_DWH* database aan te maken (= destination database)
-- de *VisionAirport_OLTP* database aan te maken (= source database) 
-- in de *VisionAirport_OLTP* database de schema's *RAW*, *CLEANSED* en *ARCHIVE* aan te maken
+Voer de [Database_Setup.sql](./Scripts/Database_Setup.sql) script uit in SSMS om:
+- de **VisionAirport_DWH** database aan te maken (= destination database)
+- de **VisionAirport_OLTP** database aan te maken (= source database) 
+- in de **VisionAirport_OLTP** database de schema's **RAW**, **CLEANSED** en **ARCHIVE** aan te maken
 
 <br>
 
 ## Data importing <a name="raw"></a>
-Nadat de *VisionAirport_OLTP* database en zijn schema's zijn aangemaakt, importeren we de flat files. Deze import gebeurd via de Import Wizard in SSMS.
+Nadat de *VisionAirport_OLTP* database en zijn schema's zijn aangemaakt, is de volgende stap het importeren van de flat files. Deze import gebeurd via de *Import Wizard* in SSMS.
 Volg deze stappen voor elke flat file:
 1. Right click *VisionAirport_OLTP* database > Tasks > Import Flat File...
 2. Klik op Browse.. > ga naar de locatie van de flat file > Open
