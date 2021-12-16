@@ -2,7 +2,7 @@
 
 <br>
 
-**TODO**
+**TODO:**
 <br>
 
 *Youssef*
@@ -26,6 +26,8 @@
 *Algemeen + eventueel nog te cleanen*
 - [ ] UTF-8 varchar string decoden > if ASCII or null > do nothing
 - [ ] Delete duplicates luchthavens
+
+<br>
 
 # Introductie
 In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen. De handleiding bestaat uit vijf stappen:
