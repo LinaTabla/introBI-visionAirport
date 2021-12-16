@@ -37,8 +37,8 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 3. [Data importing](#raw)
 4. [Data cleaning](#cleansed)
 5. [Datawarehouse](#dwh)
- * [DWH setup in SSMS](#ssms)
- * [Data inladen in DWH met SSIS](#ssis)
+5.1 [DWH setup in SSMS](#ssms)
+5.2 [Data inladen in DWH met SSIS](#ssis)
 8. [Analyseren met PowerBI](#powerbi)
 
 <br>
