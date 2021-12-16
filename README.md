@@ -55,20 +55,26 @@ De eerste stap is het creëren van de OLTP database en de verschillende schema's
 <br>
 
 ## Data importing <a name="raw"></a>
-Nadat de schema's en de VisionAirport_OLTP database zijn aangemaakt, importeren we de flat files. Deze import gebeurd via Import Wizard in SSMS.
+Nadat de VisionAirport_OLTP database en de schema's zijn aangemaakt, importeren we de flat files. Deze import gebeurd via Import Wizard in SSMS.
 Volg deze stappen voor elke flat file:
 1. Right click *VisionAirport_OLTP* database > Tasks > Import Flat File...
 2. Klik op Browse.. > ga naar de locatie van de flat file > Open
-3. Geef de tabel een naam (optioneel) en kies als Table schema *RAW*
+3. Pas de naam van de tabel niet aan en kies als Table schema *RAW*
 5. Klik twee keer op Next
-6. Verander het Data Type voor elke kolom-naam naar **nvarchar(50)** en vink Allow Nulls aan voor alle kolommen
+6. Verander het Data Type voor elke kolom-naam naar **nvarchar(50)** en vink **Allow Nulls** aan voor alle kolommen
 7. Klik op Next en dan op Finish
 >Let op: In de flat file "exports_luchthavens.txt" moet je de eerste kolom op **nvarchar(MAX)** zetten in plaats van nvarchar(50).
 
 <br>
 
 ## Data cleaning <a name="cleansed"></a>
-In de [Database_Setup](#databasesetup) hebben we in de VisionAirport_OLTP database drie schema's aangemaakt. In de volgende stappen gaan deze schema's elk een andere functie hebben. De verschillende schema's en hun funtie worden hier uitgelegd:
+In de [Database_Setup](#databasesetup) hebben we in de VisionAirport_OLTP database drie schema's aangemaakt die elk een andere functie hebben:
+| Schema        | Functie |
+| --- | ---|
+| **RAW** | De één op één data die we in de [data importing](#raw) hebben ingeladen. |
+| **CLEANSED** | De data die écht van belang is en *gecleaned* is. De gecleande data wordt gebruikt voor de [DWH](#dwh). |
+| **ARCHIVED** | Alle data van de RAW schema die nutteloos, dubbel of corrupt is. |
+
 - **RAW**: de één op één data die we in de *Data importing* hebben ingeladen.
 - **CLEANSED**: de data die écht van belang is en *gecleaned* is. We gebruiken deze data voor de DWH.
 - **ARCHIVED**: alle data van de RAW schema die nutteloos of corrupt is.
