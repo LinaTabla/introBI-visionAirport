@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>introBI-visionAirport</Name>
-    <LastWriteTime>2021-12-14T12:46:53.3752176Z</LastWriteTime>
+    <LastWriteTime>2021-12-15T13:54:39.723092Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package1.dtsx</Name>
-      <LastWriteTime>2021-12-14T13:12:20.2920754Z</LastWriteTime>
+      <Name>Incremental.dtsx</Name>
+      <LastWriteTime>2021-12-16T10:31:05.0799043Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>FullLoad.dtsx</Name>
+      <LastWriteTime>2021-12-14T16:10:35.3700733Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
