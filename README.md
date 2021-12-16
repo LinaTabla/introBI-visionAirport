@@ -50,7 +50,7 @@ Volg deze stappen voor elke flat file:
 <br>
 
 ## Data cleaning <a name="cleansed"></a>
-In de [Database_Setup](#databasesetup) hebben we in de VisionAirport_OLTP database drie schema's aangemaakt die elk een andere functie hebben:
+In de [Database setup](#databasesetup) hebben we in de VisionAirport_OLTP database drie schema's aangemaakt die elk een andere functie hebben:
 | Schema        | Functie |
 | --- | ---|
 | **RAW** | De één op één data die we in de [data importing](#raw) hebben ingeladen. |
