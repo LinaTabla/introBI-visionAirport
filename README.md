@@ -24,7 +24,7 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 
 ## Database setup <a name="databasesetup"></a>
 In dit project maken we gebruik van twee databases: *VisionAirport_OLTP* en *VisionAirport_DWH*. 
-De *VisionAirport_OLTP* heeft daarbovenop drie schema waarin we gaan werken.
+De *VisionAirport_OLTP* heeft daarbovenop drie schema's waarin we gaan werken.
 <br>
 
 Voer de [Database_Setup.sql](./scripts/Database_Setup.sql) script uit in SSMS om:
