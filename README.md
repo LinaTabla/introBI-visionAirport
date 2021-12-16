@@ -3,6 +3,8 @@
 <br>
 
 **TODO**
+<br>
+
 *Youssef*
 - [ ] Create and cleanse all tables algemeen (Youssef)
 
@@ -19,7 +21,6 @@
 - [ ] Powerpoint
 
 *Algemeen + eventueel nog te cleanen*
-
 - [ ] UTF-8 varchar string decoden > if ASCII or null > do nothing
 - [ ] Delete duplicates luchthavens
 
