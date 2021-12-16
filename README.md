@@ -37,7 +37,7 @@ Voer de [Database_Setup.sql](./Scripts/Database_Setup.sql) script uit in SSMS om
 ## Data importing <a name="raw"></a>
 Nadat de *VisionAirport_OLTP* database en zijn schema's zijn aangemaakt, is de volgende stap het importeren van de flat files. Deze import gebeurd via de *Import Wizard* in SSMS.
 Volg deze stappen voor elke flat file:
-1. Right click *VisionAirport_OLTP* database > Tasks > Import Flat File...
+1. Right click *VisionAirport_OLTP* database > Tasks > Import Flat File... > Next
 2. Klik op Browse.. > ga naar de locatie van de flat file > Open
 3. Pas de naam van de tabel niet aan en kies als Table schema *RAW*
 5. Klik twee keer op Next
