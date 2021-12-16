@@ -31,19 +31,17 @@
 <br>
 
 # Introductie
-In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen. De handleiding bestaat uit zes stappen:
-1. [Nodige software](#software)
-2. [Database setup](#databasesetup)
-3. [Data importing](#raw)
-4. [Data cleaning](#cleansed)
-5. [Datawarehouse](#dwh)
+In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen en uitvoeren. De handleiding bestaat uit vijf stappen:
+1. [Database setup](#databasesetup)
+2. [Data importing](#raw)
+3. [Data cleaning](#cleansed)
+4. [Datawarehouse](#dwh)
    * [DWH setup in SSMS](#ssms)
    * [Data inladen in DWH met SSIS](#ssis)
-6. [Analyseren met PowerBI](#powerbi)
+5. [Analyseren met PowerBI](#powerbi)
 
-<br>
-
-## Nodige software <a name="software"></a>
+## Nodige software
+Om deze handleiding te kunnen volgen dient u volgende software op je lokale machine te installeren:
 - SQL Server Management Studio (SSMS)
 - Visual Studio 2019
   - SQL Server Integration Services
