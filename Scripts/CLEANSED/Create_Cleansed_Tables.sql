@@ -4,9 +4,10 @@ USE [VisionAirport_OLTP];
 DROP TABLE IF EXISTS [CLEANSED].[maatschappijen];
 CREATE TABLE [CLEANSED].[maatschappijen]
 (
-	Name varchar(50)	NOT NULL	PRIMARY KEY,
-	IATA varchar(10)	NULL,
-	ICAO varchar(10)	NULL
+	MaatschappijId	int			NOT NULL	IDENTITY	PRIMARY KEY,
+	Naam			varchar(50)	NOT NULL,
+	IATA			varchar(2)	NULL,
+	ICAO			varchar(4)	NULL
 );
 
 --Vliegtuigtype
@@ -27,76 +28,94 @@ CREATE TABLE [CLEANSED].[vliegtuigtype]
 DROP TABLE IF EXISTS [CLEANSED].[vliegtuig];
 CREATE TABLE [CLEANSED].[vliegtuig]
 (
-	Vliegtuigcode	varchar(8)	NOT NULL	PRIMARY KEY,
-	Airlinecode		char(5)		NULL,
-	Vliegtuigtype	varchar(3)	NULL,
-	Bouwjaar		int			NULL
+	VliegtuigCode	varchar(8)	NOT NULL	PRIMARY KEY,
+	AirlineCode		varchar(5)	NULL,
+	VliegtuigType	char(3)	NOT NULL,
+	Bouwjaar		int			NULL,
+	FOREIGN KEY (VliegtuigType) REFERENCES [CLEANSED].[vliegtuigtype](IATA)
+);
+
+-- Vlucht
+DROP TABLE IF EXISTS [CLEANSED].[vlucht];
+CREATE TABLE [CLEANSED].[vlucht]
+(
+	VluchtId		int			NOT NULL	PRIMARY KEY,
+	Vluchtnr		varchar(7)	NULL,
+	Airlinecode		varchar(3)	NULL,
+	Destcode		varchar(3)	NULL,
+	Vliegtuigcode	varchar(8)	NULL,
+	Datum			datetime	NULL
 );
 
 -- Banen
 DROP TABLE IF EXISTS [CLEANSED].[banen];
 CREATE TABLE [CLEANSED].[banen]
 (
-	Baannummer	int			NOT NULL PRIMARY KEY,
+	Baannummer	int			NOT NULL	PRIMARY KEY,
 	Code		varchar(7)	NULL,
 	Naam		varchar(50) NULL,
 	Lengte		int			NULL
-);
-
--- Vertrek
-DROP TABLE IF EXISTS [CLEANSED].[vertrek];
-CREATE TABLE [CLEANSED].[vertrek]
-(
-	Vluchtid		int			NOT NULL PRIMARY KEY,
-	Vliegtuigcode	varchar(10) NULL,
-	Terminal		char(1)		NULL,
-	Gate			char(2)		NULL,
-	Baan			int			NULL,
-	Bezetting		int			NULL,
-	Vracht			int			NULL,
-	Vertrektijd		datetime	NULL
 );
 
 -- Aankomst
 DROP TABLE IF EXISTS [CLEANSED].[aankomst];
 CREATE TABLE [CLEANSED].[aankomst]
 (
-	Vluchtid		int			NOT NULL	PRIMARY KEY,
+	VluchtId		int			NOT NULL	PRIMARY KEY,
+	VliegtuigCode	varchar(10) NULL,
+	Terminal		char(1)		NULL,
+	Gate			char(2)		NULL,
+	Baan			int			NOT NULL,
+	Bezetting		int			NULL,
+	Vracht			int			NULL,
+	Aankomsttijd	datetime	NULL,
+	FOREIGN KEY (VluchtId) REFERENCES [CLEANSED].[vlucht](VluchtId),
+	FOREIGN KEY (Baan) REFERENCES [CLEANSED].[banen](Baannummer)
+);
+
+-- Vertrek
+DROP TABLE IF EXISTS [CLEANSED].[vertrek];
+CREATE TABLE [CLEANSED].[vertrek]
+(
+	VluchtId		int			NOT NULL	PRIMARY KEY,
 	Vliegtuigcode	varchar(10) NULL,
 	Terminal		char(1)		NULL,
 	Gate			char(2)		NULL,
-	Baan			int			NULL,
+	Baan			int			NOT NULL,
 	Bezetting		int			NULL,
 	Vracht			int			NULL,
-	Aankomsttijd	datetime	NULL
+	Vertrektijd		datetime	NULL,
+	FOREIGN KEY (VluchtId) REFERENCES [CLEANSED].[vlucht](VluchtId),
+	FOREIGN KEY (Baan) REFERENCES [CLEANSED].[banen](Baannummer)
 );
 
 -- Klant
 DROP TABLE IF EXISTS [CLEANSED].[klant];
 CREATE TABLE [CLEANSED].[klant]
 (
-	Vluchtid		int		NOT NULL	PRIMARY KEY,
+	VluchtId		int		NOT NULL	PRIMARY KEY,
 	Operatie		float	NULL,
 	Faciliteiten	float	NULL,
-	Shops			float	NULL
+	Shops			float	NULL,
+	FOREIGN KEY (VluchtId) REFERENCES [CLEANSED].[vlucht](VluchtId)
 )
 
 -- Luchthavens
 DROP TABLE IF EXISTS [CLEANSED].[luchthavens];
 CREATE TABLE [CLEANSED].[luchthavens]
 (
-	Airportid	int				NOT NULL	PRIMARY KEY,
-	Airport		varchar(100)	NULL,
-	City		varchar(50)		NULL,
-    Country		varchar(50)		NULL,
+	LuchthavenId	int			NOT NULL	IDENTITY	PRIMARY KEY,
+	Naam		varchar(100)	NULL,
+	Stad		varchar(50)		NULL,
+    Land		varchar(50)		NULL,
 	IATA		char(3)			NULL,
 	ICAO		char(4)			NULL,
-	Lat			float			NULL,
-	Lon			float			NULL,
-	Alt			int				NULL,
+	Latitude	float			NULL,
+	Longitude	float			NULL,
+	Altitude	int				NULL,
 	TZ			float			NULL,
 	DS			char(1)			NULL,
-	T_Z			varchar(50)		NULL
+	Area		varchar(100)	NULL
 );
 
 -- Planning
@@ -109,18 +128,6 @@ CREATE TABLE [CLEANSED].[planning]
 	Planterminal	char(1)		NULL,
 	Plangate		char(2)		NULL,
 	Plantijd		time		NULL
-);
-
--- Vlucht
-DROP TABLE IF EXISTS [CLEANSED].[vlucht];
-CREATE TABLE [CLEANSED].[vlucht]
-(
-	Vluchtid		int			NOT NULL	PRIMARY KEY,
-	Vluchtnr		varchar(7)	NULL,
-	Airlinecode		varchar(3)	NULL,
-	Destcode		varchar(3)	NULL,
-	Vliegtuigcode	varchar(8)	NULL,
-	Datum			datetime	NULL
 );
 
 -- Weer
