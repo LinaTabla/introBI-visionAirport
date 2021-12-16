@@ -23,7 +23,11 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 <br>
 
 ## Database setup <a name="databasesetup"></a>
-Voer de [Database_Setup.sql](./scripts/Database_Setup.sql) script uit in SSMS om de *VisionAirport_OLTP* database en zijn schema's *RAW*, *CLEANSED* en *ARCHIVE* aan te maken.
+In het project maken we gebruik van twee databases, waarvan één database drie schema's heeft. 
+Voer de [Database_Setup.sql](./scripts/Database_Setup.sql) script uit in SSMS om:
+- de *VisionAirport_DWH* database aan te maken (= destination database)
+- de *VisionAirport_OLTP* database aan te maken (= source database) 
+- in de *VisionAirport_OLTP* database de schema's *RAW*, *CLEANSED* en *ARCHIVE* aan te maken
 
 <br>
 
@@ -62,7 +66,7 @@ Deze scripts vullen alle tabellen in de CLEANSED-schema met de data van de RAW-s
 In deze stap beginnen we aan de datawarehouse. Om de gezuiverde data vanuit SSIS inladen in SSMS moeten we eerst het nodige doen in SSMS en maken we daarna gebruik van SSIS.
 
 ### DWH setup in SSMS <a name="ssms"></a>
-1. Maak in SSMS een nieuwe database aan en geef het *VisionAirport_DWH* als naam. In deze database gaan we de gezuivere data inladen.
+1. In de [Database setup](#databasesetup) hadden we de *VisionAirport_DWH* database aangemaakt. In deze database gaan we de gezuivere data inladen.
 2. Voer de [Create_DWH_Tables.sql](./scripts/DWH/Create_DWH_Tables.sql) script uit in de *VisionAirport_DWH* database.
 > Script bestaat nog niet. Enkel nog gedaan voor Vlucht.
 
