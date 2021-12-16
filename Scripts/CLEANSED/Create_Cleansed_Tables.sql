@@ -138,7 +138,7 @@ CREATE TABLE [CLEANSED].[weer]
 	DDVEC	int	NULL,
 	FHVEC	int	NULL,
 	FG	int	NULL,
-	FHX		int	NULL,
+	FHX	int	NULL,
 	FHXH	int	NULL,
 	FHN	int	NULL,
 	FHNH	int	NULL,
