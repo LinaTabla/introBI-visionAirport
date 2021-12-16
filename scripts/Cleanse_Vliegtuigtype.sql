@@ -9,7 +9,7 @@ INSERT INTO [CLEANSED].[vliegtuigtype]
 			NULLIF(CAST(Merk AS varchar(10)),'') Merk,
 			NULLIF(CAST(Type AS varchar(100)),'') Type,
 			CAST(NULLIF(NULLIF(WAKE, ''), 'n/a') AS varchar(5)) Wake,
-			NULLIF(CAST(CAT AS varchar(520)), '') Cat,
+			NULLIF(CAST(CAT AS varchar(50)), '') Cat,
 			CAST(NULLIF(Capaciteit, '') AS int) Capaciteit,
 			CAST(NULLIF(Vracht, '') AS int)  Vracht
 		FROM [RAW].[export_vliegtuigtype]
