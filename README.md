@@ -42,7 +42,7 @@ Volg deze stappen voor elke flat file:
 3. Pas de naam van de tabel niet aan en kies als Table schema *RAW*
 5. Klik twee keer op Next
 6. Verander het Data Type voor elke kolom-naam naar **nvarchar(50)** en vink **Allow Nulls** aan voor alle kolommen
-7. Klik op Next en dan op Finish
+7. Klik op Next > Finish > Close
 >Let op: In de flat file "exports_luchthavens.txt" moet je de eerste kolom op **nvarchar(MAX)** zetten in plaats van nvarchar(50).
 
 <br>
