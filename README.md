@@ -14,7 +14,7 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 **De handleiding bestaat uit vijf stappen:**
 1. [Database setup](#databasesetup)
 2. [Data importing](#raw)
-3. [Data cleaning](#cleansed)
+3. [Data cleansing](#cleansed)
 4. [Datawarehouse](#dwh)
    * [DWH setup in SSMS](#ssms)
    * [Data inladen in DWH met SSIS](#ssis)
@@ -23,7 +23,10 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 <br>
 
 ## Database setup <a name="databasesetup"></a>
-In dit project maken we gebruik van twee databases. Eén van die databases, nl. de source database, heeft drie schema's. 
+In dit project maken we gebruik van twee databases: *VisionAirport_OLTP* en *VisionAirport_DWH*. 
+De *VisionAirport_OLTP* heeft daarbovenop drie schema waarin we gaan werken.
+<br>
+
 Voer de [Database_Setup.sql](./scripts/Database_Setup.sql) script uit in SSMS om:
 - de *VisionAirport_DWH* database aan te maken (= destination database)
 - de *VisionAirport_OLTP* database aan te maken (= source database) 
