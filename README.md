@@ -31,7 +31,7 @@
 <br>
 
 # Introductie
-In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen. De handleiding bestaat uit vijf stappen:
+In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je lokale machine kan opstellen. De handleiding bestaat uit zes stappen:
 1. [Nodige software](#software)
 2. [Database setup](#databasesetup)
 3. [Data importing](#raw)
