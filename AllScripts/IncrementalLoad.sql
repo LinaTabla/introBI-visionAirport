@@ -1,0 +1,2 @@
+-- Om alleen de nieuwste data op te halen gebruiken we "Lookup component"
+	-- (ga je ook nodig hebben om uw DWH keys op te zoeken => googlen)
