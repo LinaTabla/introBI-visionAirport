@@ -36,15 +36,17 @@ In deze handleiding wordt er stap voor stap uitgelegd hoe je dit project op je l
 2. [Database setup](#databasesetup)
 3. [Data importing](#raw)
 4. [Data cleaning](#cleansed)
-5. [Data Warehouse](#dwh)
-6. [Data inladen in DWH met SSIS](#ssis)
-7. [Analyseren met PowerBI](#powerbi)
+5. [Datawarehouse](#dwh)
+  - [DWH setup in SSMS](#ssms)
+  - [Data inladen in DWH met SSIS](#ssis)
+8. [Analyseren met PowerBI](#powerbi)
 
 <br>
 
 ## Nodige software <a name="software"></a>
 - SQL Server Management Studio (SSMS)
 - Visual Studio 2019
+  - SQL Server Integration Services
 - Microsoft Power BI
 
 <br>
@@ -72,35 +74,42 @@ In de [Database_Setup](#databasesetup) hebben we in de VisionAirport_OLTP databa
 | Schema        | Functie |
 | --- | ---|
 | **RAW** | De één op één data die we in de [data importing](#raw) hebben ingeladen. |
-| **CLEANSED** | De data die écht van belang is en *gecleaned* is. De gecleande data wordt gebruikt voor de [DWH](#dwh). |
+| **CLEANSED** | De data die écht van belang is en *gecleaned* is. De gezuiverde data wordt gebruikt voor de [DWH](#dwh). |
 | **ARCHIVED** | Alle data van de RAW schema die nutteloos, dubbel of corrupt is. |
 
-- **RAW**: de één op één data die we in de *Data importing* hebben ingeladen.
-- **CLEANSED**: de data die écht van belang is en *gecleaned* is. We gebruiken deze data voor de DWH.
-- **ARCHIVED**: alle data van de RAW schema die nutteloos of corrupt is.
-
-Om de data in de juiste schema's te krijgen moeten er een aantal queries uitgevoerd worden. Deze queries vind je in de [scripts](./scripts) folder en worden in twee stappen uitgevoerd:
+Om de data in de juiste schema's te krijgen moeten er een aantal scripts uitgevoerd worden in SSMS. Deze scripts vind je in de [scripts](./scripts) folder en worden in twee stappen uitgevoerd:
 <br>
-1. Voer de [Create_Cleansed_Tables.sql](./scripts/Create_Cleansed_Tables.sql) script uit in in SSMS. Deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
-2. Voer alle [Cleanse_*.sql](./scripts) scripts uit in SSMS. 
-Deze scripts vullen alle CLEANSED-tabellen met de data van de RAW schema. De data wordt hier gecleaned door de datatypes in het juiste type te converteren, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen.
+1. Voer de [Create_Cleansed_Tables.sql](./scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit in in SSMS. Deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
+2. Voer alle [Cleanse_*.sql](./scripts/CLEANSED) scripts uit in SSMS.
+Deze scripts vullen alle tabellen in de CLEANSED-schema met de data van de RAW-schema. Echter wordt de data wordt hier vooraf gecleaned door het juiste datatype toe te wijzen, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen.
 >Momenteel maakt de volgorde waarin we de cleanse_*.sql scripts uitvoeren nog niet uit omdat we nog geen FK's gelegd hebben. Eens dit gebeurd is passen we dit aan in deze README.md.
-3. Voer de [Create_Archive.sql](./scripts/Create_Archive.sql) script uit in SSMS. Deze script kopieert de structuur van de RAW-schema. De duplicates, irrelevante data en corrupte data komt hierin terecht.
+3. Voer de [Create_Archive.sql](./scripts/ARCHIVE/Create_Archive.sql) script uit in SSMS. Deze script kopieert de structuur van de tabellen in de RAW-schema om de tabellen in de ARCHIVE-schema aan te maken. Alle records die duplicates, irrelevante data en corrupte data bevatten, komen hierin terecht.
 
 <br>
 
-## Data Warehouse creatie scripts <a name="dwh"></a>
-In deze stap beginnen we aan de DWH. Om data vanuit SSIS terug in te laden in SSMS moeten we volgende stappen uitvoeren:
-1. Maak in SSMS een nieuwe database aan genaamd *VisionAirport_DWH*. In deze database gaan we zuivere data inladen.
-2. Voer de [Create_DWH_Tables.sql](./scripts/Create_DWH_Tables.sql) script uit in de *VisionAirport_DWH* database.
+## Datawarehouse <a name="dwh"></a>
+In deze stap beginnen we aan de datawarehouse. Om de gezuiverde data vanuit SSIS inladen in SSMS moeten we eerst het nodige doen in SSMS en maken we daarna gebruik van SSIS.
+
+### DWH setup in SSMS <a name="ssms"></a>
+1. Maak in SSMS een nieuwe database aan en geef het *VisionAirport_DWH* als naam. In deze database gaan we de gezuivere data inladen.
+2. Voer de [Create_DWH_Tables.sql](./scripts/DWH/Create_DWH_Tables.sql) script uit in de *VisionAirport_DWH* database.
 > Script bestaat nog niet. Enkel nog gedaan voor Vlucht.
 
-## Data inladen in DWH met SSIS <a name="ssis"></a>
-Eerst Full Load, dan Incremental Load.
+### Data inladen in DWH met SSIS <a name="ssis"></a>
+Om de solution probleemloos te kunnen uitvoeren moeten we eerst de connectie naar de juiste databases maken en dan de SSIS packages uitvoeren. 
 
-Done: 
-- Add TRUNCATE script
-- Om te vermijden dat bij elke start alles in de control flow tegelijk wordt uitgevoerd: add arrows in SSIS
+#### Database connectie
+Om de connectie naar de juiste databases te maken maken we gebruik van deze [solution](./introBI-visionAirport). Voer volgende stappen uit voor elke connectie (OLTP en DWH) in de *Connection Manager* folder:
+1. Dubbelklik op de connectie om het beheer-scherm te openen.
+2. Selecteer *Native OLE DB\SQL Server Native Client 11.0* als provider.
+3. Bij Server name geef je de servernaam van je machine in. Dit is de Server name die je gebruikt om aan te melden bij SSMS.
+>Let op: druk **niet** op het dropdown pijltje links van de Refresh button!
+4. Laat voor de rest alle connectie instellingen zoals ze er staan en druk op *OK*.
+
+#### SSIS-packages
+Voer nu de SSIS packages uit in de gegeven volgorde:
+>Nog afmaken en pushen
+
 <br>
 
 ## Analyseren met PowerBI <a name="powerbi"></a>
