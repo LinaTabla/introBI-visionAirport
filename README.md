@@ -62,22 +62,24 @@ In de [database setup](#databasesetup) hebben we in de *VisionAirport_OLTP* data
 Om de data in de juiste schema's te krijgen moeten er een aantal scripts uitgevoerd worden in SSMS. Deze scripts vind je in de [*Scripts*](./Scripts) folder.
 
 ### Cleansed scripts <a name="cleansed"></a>
-In de [CLEANSED](./Scripts/CLEANSED) folder staan alle scripts die invloed op hebben op de CLEANSED-schema. Voer de scripts uit in SSMS in deze volgorde:
-1. [Create_Cleansed_Tables.sql](./Scripts/CLEANSED/Create_Cleansed_Tables.sql) : deze script maakt alle CLEANSED-tabellen aan met de juiste datatypes.
-2. Voer deze scripts in de [CLEANSED](./Scripts/CLEANSED) folder uit volgens deze volgorde:
-- [Cleansed_Maatschappijen.sql](./Scripts/CLEANSED/Cleansed_Maatschappijen.sql)
-- [Cleansed_Vliegtuigtype.sql](./Scripts/CLEANSED/Cleansed_Vliegtuigtype.sql)
-- [Cleansed_Vliegtuig.sql](./Scripts/CLEANSED/Cleansed_Vliegtuig.sql)
-- [Cleansed_Vlucht.sql](./Scripts/CLEANSED/Cleansed_Vlucht.sql)
-- [Cleansed_Banen.sql](./Scripts/CLEANSED/Cleansed_Banen.sql)
-- [Cleansed_Aankomst.sql](./Scripts/CLEANSED/Cleansed_Aankomst.sql)
-- [Cleansed_Vertrek.sql](./Scripts/CLEANSED/Cleansed_Vertrek.sql)
-- [Cleansed_Klant.sql](./Scripts/CLEANSED/Cleansed_Klant.sql)
-- [Cleansed_Luchthavens.sql](./Scripts/CLEANSED/Cleansed_Luchthavens.sql)
-- [Cleansed_Planning.sql](./Scripts/CLEANSED/Cleansed_Planning.sql)
-- [Cleansed_Weer.sql](./Scripts/CLEANSED/Cleansed_Weer.sql)
+In de [CLEANSED](./Scripts/CLEANSED) folder staan alle scripts die invloed op hebben op de CLEANSED-schema. We creëren eerst de CLEANSED-tabellen met de juiste datatypes door de [Create_Cleansed_Tables.sql](./Scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit te voeren. 
+<br>
 
-Deze scripts vullen alle tabellen in de CLEANSED-schema met de data van de RAW-schema. Echter wordt de data wordt hier ook gecleaned door het het te converteren naar het juiste datatype, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen.
+Daarna vullen vullen we de CLEANSED-tabellen met de data van de RAW-tabellen. In de `INSERT` wordt de data ineens ook gecleaned door het het te converteren naar het juiste datatype, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen. 
+<br>
+
+Voer de *cleanse* scripts uit in deze volgorde:
+1. [Cleansed_Maatschappijen.sql](./Scripts/CLEANSED/Cleansed_Maatschappijen.sql)
+2. [Cleansed_Vliegtuigtype.sql](./Scripts/CLEANSED/Cleansed_Vliegtuigtype.sql)
+3. [Cleansed_Vliegtuig.sql](./Scripts/CLEANSED/Cleansed_Vliegtuig.sql)
+4. [Cleansed_Vlucht.sql](./Scripts/CLEANSED/Cleansed_Vlucht.sql)
+5. [Cleansed_Banen.sql](./Scripts/CLEANSED/Cleansed_Banen.sql)
+6. [Cleansed_Aankomst.sql](./Scripts/CLEANSED/Cleansed_Aankomst.sql)
+7. [Cleansed_Vertrek.sql](./Scripts/CLEANSED/Cleansed_Vertrek.sql)
+8. [Cleansed_Klant.sql](./Scripts/CLEANSED/Cleansed_Klant.sql)
+9. [Cleansed_Luchthavens.sql](./Scripts/CLEANSED/Cleansed_Luchthavens.sql)
+10. [Cleansed_Planning.sql](./Scripts/CLEANSED/Cleansed_Planning.sql)
+11. [Cleansed_Weer.sql](./Scripts/CLEANSED/Cleansed_Weer.sql)
 
 <br>
 
