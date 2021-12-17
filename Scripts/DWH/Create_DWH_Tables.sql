@@ -1,3 +1,5 @@
+ALTER DATABASE VisionAirport_DWH COLLATE Latin1_General_CI_AS; 
+
 USE [VisionAirport_DWH];
 GO
 
