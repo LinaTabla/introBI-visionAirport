@@ -62,7 +62,7 @@ In de [database setup](#databasesetup) hebben we in de *VisionAirport_OLTP* data
 Om de data in de juiste schema's te krijgen moeten er een aantal scripts uitgevoerd worden in SSMS. Deze scripts vind je in de [*Scripts*](./Scripts) folder.
 
 ### Cleansed scripts <a name="cleansed"></a>
-In de [CLEANSED](./Scripts/CLEANSED) folder staan alle scripts die invloed op hebben op de CLEANSED-schema. We creëren eerst de CLEANSED-tabellen met de juiste datatypes door de [Create_Cleansed_Tables.sql](./Scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit te voeren. 
+In [deze](./Scripts/CLEANSED) folder staan alle scripts die invloed op hebben op de CLEANSED-schema. We creëren eerst de CLEANSED-tabellen met de juiste datatypes door de [Create_Cleansed_Tables.sql](./Scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit te voeren. 
 <br>
 
 Daarna vullen vullen we de CLEANSED-tabellen met de data van de RAW-tabellen. In de `INSERT` wordt de data ineens ook gecleaned door het het te converteren naar het juiste datatype, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen. 
@@ -81,10 +81,19 @@ Voer de *cleanse* scripts uit in deze volgorde:
 10. [Cleansed_Planning.sql](./Scripts/CLEANSED/Cleansed_Planning.sql)
 11. [Cleansed_Weer.sql](./Scripts/CLEANSED/Cleansed_Weer.sql)
 
+### Archive scripts <a name="archive"></a>
+In de [deze](./Scripts/ARCHIVED) folder staan alle scripts die invloed op hebben op de ARCHIVED-schema. We creëren eerst de nodige ARCHIVE-tabellen met de [Create_Archive.sql](./Scripts/ARCHIVED/Create_Archive.sql) script. Dit script maakt de tabellen aan door de structuur van de RAW-tabellen te kopiëren.
 <br>
 
-### Archive scripts <a name="archive"></a>
-3. Voer de [Create_Archive.sql](./scripts/ARCHIVE/Create_Archive.sql) script uit in SSMS. Deze script kopieert de structuur van de tabellen in de RAW-schema om de tabellen in de ARCHIVE-schema aan te maken. Alle records die duplicates, irrelevante data en corrupte data bevatten, komen hierin terecht.
+Daarna vullen vullen we de ARCHIVE-tabellen op dezelfde manier als bij de *cleanse* scripts.
+
+Voer de *archive* script uit in deze volgorde:
+1. [ARCHIVE_Maatschappijen.sql](./Scripts/ARCHIVE/ARCHIVE_Maatschappijen.sql)
+2. [ARCHIVE_Vliegtuigtype.sql](./Scripts/ARCHIVE/ARCHIVE_Vliegtuigtype.sql)
+3. [ARCHIVE_Vlucht.sql](./Scripts/ARCHIVE/ARCHIVE_Vlucht.sql)
+4. [ARCHIVE_Aankomst.sql](./Scripts/ARCHIVE/ARCHIVE_Aankomst.sql)
+5. [ARCHIVE_Vertrek.sql](./Scripts/ARCHIVE/ARCHIVE_Vertrek.sql)
+6. [ARCHIVE_Luchthavens.sql](./Scripts/ARCHIVE/ARCHIVE_Luchthavens.sql)
 
 <br>
 
