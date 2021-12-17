@@ -7,10 +7,10 @@ INSERT INTO [ARCHIVE].[luchthavens]
 			CAST(Country AS varchar(40)) Land,
 			NULLIF(CAST(IATA AS varchar(10)), '') IATA,
 			NULLIF(REPLACE(CAST(ICAO AS varchar(10)), '\N', ''), '') ICAO,
-			CAST(Lat AS decimal(11, 9)) Latitude,
-			CAST(Lon AS decimal(11, 9)) Longitude,
+			CAST(Lat AS float) Latitude,
+			CAST(Lon AS float) Longitude,
 			CAST(Alt AS int) Altidue,
-			CAST(TZ AS decimal(4, 3)) TimeZoneNummer,
+			CAST(TZ AS float) TimeZoneNummer,
 			CAST(DST AS char(3)) DST,
 			NULLIF(REPLACE(CAST(Tz1 AS varchar(50)), '\N', ''), '') TimeZoneTekst
 		FROM [RAW].[export_luchthavens]
