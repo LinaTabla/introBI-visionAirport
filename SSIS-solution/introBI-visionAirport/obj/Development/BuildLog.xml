@@ -2,18 +2,48 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>introBI-visionAirport</Name>
-    <LastWriteTime>2021-12-15T13:54:39.723092Z</LastWriteTime>
+    <LastWriteTime>2021-12-17T04:24:10.5727342Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Incremental.dtsx</Name>
-      <LastWriteTime>2021-12-16T10:31:05.0799043Z</LastWriteTime>
+      <LastWriteTime>2021-12-16T10:37:52.6971332Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FullLoad.dtsx</Name>
       <LastWriteTime>2021-12-14T16:10:35.3700733Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimBanen.dtsx</Name>
+      <LastWriteTime>2021-12-17T03:24:46.9780936Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimDatum.dtsx</Name>
+      <LastWriteTime>2021-12-17T03:26:37.103067Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimGate.dtsx</Name>
+      <LastWriteTime>2021-12-17T03:57:09.6154531Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimLuchthaven.dtsx</Name>
+      <LastWriteTime>2021-12-17T04:01:49.0947044Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimMaatschappij.dtsx</Name>
+      <LastWriteTime>2021-12-17T04:04:27.49403Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimVliegtuigType.dtsx</Name>
+      <LastWriteTime>2021-12-17T04:24:06.6390932Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

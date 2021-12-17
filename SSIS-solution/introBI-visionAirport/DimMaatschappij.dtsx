@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/14/2021 1:06:48 PM"
+  DTS:CreationDate="12/17/2021 5:02:36 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-5SIJ6S3C"
   DTS:CreatorName="LAPTOP-5SIJ6S3C\LinaT"
-  DTS:DTSID="{D6DF4AEC-AE50-4392-8940-6AB4186DB140}"
+  DTS:DTSID="{EB7B407E-9B2D-4F23-8CEE-D957AD97C1F9}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{4D03CE98-52D0-42BB-AB9E-18296BFCA862}">
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{7E7110FC-C0C2-4A84-BBFB-0D3FE23370DF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{ABC8799E-D6FF-45DB-A171-E8C6FEDC4D1A}"
+      DTS:DTSID="{1EEB7C84-6A0A-4D76-9611-62074E9AF7AD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -47,7 +47,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[vlucht]</property>
+                  name="OpenRowset">[dbo].[DimMaatschappij]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -73,11 +73,11 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
+                  name="FastLoadKeepIdentity">true</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -104,84 +104,60 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vluchtnr]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="7"
-                      cachedName="Vluchtnr"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vluchtnr]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vluchtnr]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Airlinecode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="Airlinecode"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Airlinecode]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Airlinecode]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Destcode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="Destcode"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Destcode]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Destcode]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vliegtuigcode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Vliegtuigcode"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vliegtuigcode]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vliegtuigcode]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Datum]"
-                      cachedDataType="dbDate"
-                      cachedName="Datum"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Datum]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vluchtid]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MaatschappijId]"
                       cachedDataType="i4"
-                      cachedName="Vluchtid"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vluchtid]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vluchtid]" />
+                      cachedName="MaatschappijId"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaatschappijID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaatschappijId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Naam]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Naam"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Naam]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Naam]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="IATA"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IATA]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ICAO"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ICAO]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vluchtid]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaatschappijID]"
                       dataType="i4"
-                      name="Vluchtid" />
+                      name="MaatschappijID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vluchtnr]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Naam]"
                       codePage="1252"
                       dataType="str"
-                      length="7"
-                      name="Vluchtnr" />
+                      length="50"
+                      name="Naam" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Airlinecode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="3"
-                      name="Airlinecode" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Destcode]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IATA]"
                       codePage="1252"
                       dataType="str"
                       length="3"
-                      name="Destcode" />
+                      name="IATA" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vliegtuigcode]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ICAO]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
-                      name="Vliegtuigcode" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
-                      dataType="dbDate"
-                      name="Datum" />
+                      length="4"
+                      name="ICAO" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -211,11 +187,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Source CLEANSED vlucht"
+              refId="Package\Data Flow Task\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Source CLEANSED vlucht"
+              name="OLE DB Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -226,7 +202,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[CLEANSED].[vlucht]</property>
+                  name="OpenRowset">[CLEANSED].[maatschappijen]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -260,7 +236,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Source CLEANSED vlucht.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{4B9BD609-255E-4B53-AD76-17DCAE0A55E3}:external"
                   connectionManagerRefId="Project.ConnectionManagers[LAPTOP-5SIJ6S3C.VisionAirport_OLTP]"
                   description="The OLE DB runtime connection used to access the database."
@@ -268,161 +244,119 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vluchtid]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaatschappijId]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Vluchtid]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vluchtid]"
-                      name="Vluchtid"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaatschappijId]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaatschappijId]"
+                      name="MaatschappijId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vluchtnr]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Naam]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Vluchtnr]"
-                      length="7"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vluchtnr]"
-                      name="Vluchtnr"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Naam]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Naam]"
+                      name="Naam"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Airlinecode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Airlinecode]"
-                      length="3"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Airlinecode]"
-                      name="Airlinecode"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
+                      length="2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]"
+                      name="IATA"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Destcode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Destcode]"
-                      length="3"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Destcode]"
-                      name="Destcode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vliegtuigcode]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Vliegtuigcode]"
-                      length="10"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Vliegtuigcode]"
-                      name="Vliegtuigcode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Datum]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].Columns[Datum]"
-                      name="Datum"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]"
+                      name="ICAO"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Vluchtid]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaatschappijId]"
                       dataType="i4"
-                      name="Vluchtid" />
+                      name="MaatschappijId" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Vluchtnr]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Naam]"
                       codePage="1252"
                       dataType="str"
-                      length="7"
-                      name="Vluchtnr" />
+                      length="50"
+                      name="Naam" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Airlinecode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
                       codePage="1252"
                       dataType="str"
-                      length="3"
-                      name="Airlinecode" />
+                      length="2"
+                      name="IATA" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Destcode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
                       codePage="1252"
                       dataType="str"
-                      length="3"
-                      name="Destcode" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Vliegtuigcode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="Vliegtuigcode" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
-                      dataType="dbDate"
-                      name="Datum" />
+                      length="4"
+                      name="ICAO" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Vluchtid]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaatschappijId]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Vluchtid]"
-                      name="Vluchtid" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaatschappijId]"
+                      name="MaatschappijId" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Vluchtnr]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Naam]"
                       codePage="1252"
                       dataType="str"
-                      length="7"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Vluchtnr]"
-                      name="Vluchtnr" />
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Naam]"
+                      name="Naam" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Airlinecode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IATA]"
                       codePage="1252"
                       dataType="str"
-                      length="3"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Airlinecode]"
-                      name="Airlinecode" />
+                      length="2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IATA]"
+                      name="IATA" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Destcode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ICAO]"
                       codePage="1252"
                       dataType="str"
-                      length="3"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Destcode]"
-                      name="Destcode" />
+                      length="4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ICAO]"
+                      name="ICAO" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Vliegtuigcode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Vliegtuigcode]"
-                      name="Vliegtuigcode" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Datum]"
-                      dataType="dbDate"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[Datum]"
-                      name="Datum" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -436,39 +370,12 @@
               refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Source CLEANSED vlucht.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Truncate DWH dbo vlucht"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9A7979D9-7F28-4D4A-B090-C89DAD765455}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate DWH dbo vlucht"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{BFCB8D5B-2FBE-428F-9CBF-A92743B26DD8}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[vlucht];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{4338A6C1-C9B1-4963-8E26-8EBB74857175}"
-      DTS:From="Package\Truncate DWH dbo vlucht"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -480,37 +387,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="28.7,107.1" />
-        <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Truncate DWH dbo vlucht"
-          TopLeft="5.50000000000001,5.49999999999995" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="103.9,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="293.333321677314,84.9333340083228" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -520,27 +401,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="200,41.6"
-          Id="Package\Data Flow Task\Source CLEANSED vlucht"
-          TopLeft="46.6666648123,32.933333595064" />
+          Size="152,41.6"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="229.999990860621,110.933334214952" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="61.6666642162537,157.733334586885" />
+          TopLeft="222.499991158645,239.200001900991" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="146.966664514277,74.533333595064">
+          TopLeft="307.049991009633,152.533334214952">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,83.2000009918215"
+              EndConnector="0,86.6666676860384"
               Start="0,0"
-              End="0,75.7000009918215">
+              End="0,79.1666676860384">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,75.7000009918215" />
+                    End="0,79.1666676860384" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -553,7 +434,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Source CLEANSED vlucht">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
