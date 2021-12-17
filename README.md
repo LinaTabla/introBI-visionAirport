@@ -65,7 +65,7 @@ Om de data in de juiste schema's te krijgen moeten er een aantal scripts uitgevo
 In [deze](./Scripts/CLEANSED) folder staan alle scripts die invloed op hebben op de CLEANSED-schema. We creëren eerst de CLEANSED-tabellen met de juiste datatypes door de [Create_Cleansed_Tables.sql](./Scripts/CLEANSED/Create_Cleansed_Tables.sql) script uit te voeren. 
 <br>
 
-Daarna vullen vullen we de CLEANSED-tabellen met de data van de RAW-tabellen. In de `INSERT` wordt de data ineens ook gecleaned door het het te converteren naar het juiste datatype, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen. 
+Daarna vullen we de CLEANSED-tabellen met de data van de RAW-tabellen. In de `INSERT` wordt de data ineens ook gecleaned door het het te converteren naar het juiste datatype, PK's en FK's toe te voegen en alle duplicates, irrelevante data en corrupte data er uit te halen. 
 <br>
 
 Voer de *cleanse* scripts uit in deze volgorde:
@@ -82,10 +82,10 @@ Voer de *cleanse* scripts uit in deze volgorde:
 11. [Cleansed_Weer.sql](./Scripts/CLEANSED/Cleansed_Weer.sql)
 
 ### Archive scripts <a name="archive"></a>
-In de [deze](./Scripts/ARCHIVED) folder staan alle scripts die invloed op hebben op de ARCHIVED-schema. We creëren eerst de nodige ARCHIVE-tabellen met de [Create_Archive.sql](./Scripts/ARCHIVED/Create_Archive.sql) script. Dit script maakt de tabellen aan door de structuur van de RAW-tabellen te kopiëren.
+In de [deze](./Scripts/ARCHIVED) folder staan alle scripts die invloed op hebben op het ARCHIVED-schema. We creëren eerst de nodige ARCHIVE-tabellen met de [Create_Archive.sql](./Scripts/ARCHIVED/Create_Archive.sql) script. Dit script maakt de tabellen aan door de structuur van de RAW-tabellen te kopiëren.
 <br>
 
-Daarna vullen vullen we de ARCHIVE-tabellen op dezelfde manier als bij de *cleanse* scripts.
+Daarna vullen we de ARCHIVE-tabellen op dezelfde manier als bij de *cleanse* scripts.
 
 Voer de *archive* script uit in deze volgorde:
 1. [ARCHIVE_Maatschappijen.sql](./Scripts/ARCHIVE/ARCHIVE_Maatschappijen.sql)
@@ -98,7 +98,7 @@ Voer de *archive* script uit in deze volgorde:
 <br>
 
 ## Datawarehouse <a name="dwh"></a>
-In deze stap beginnen we aan de datawarehouse. Om de gezuiverde data vanuit SSIS inladen in SSMS moeten we eerst het nodige doen in SSMS en maken we daarna gebruik van SSIS.
+In deze stap beginnen we aan de datawarehouse. Om de gezuiverde data vanuit SSIS in te laden in SSMS moeten we eerst het nodige doen in SSMS en maken we daarna gebruik van SSIS.
 
 ### DWH setup in SSMS <a name="ssms"></a>
 1. In de [Database setup](#databasesetup) hadden we de *VisionAirport_DWH* database aangemaakt. In deze database gaan we de gezuivere data inladen.
@@ -106,10 +106,10 @@ In deze stap beginnen we aan de datawarehouse. Om de gezuiverde data vanuit SSIS
 > Script bestaat nog niet. Enkel nog gedaan voor Vlucht.
 
 ### Data inladen in DWH met SSIS <a name="ssis"></a>
-Om de solution probleemloos te kunnen uitvoeren moeten we eerst de connectie naar de juiste databases maken en dan de SSIS packages uitvoeren. 
+Om de solution probleemloos uit te kunnen voeren, moeten we eerst de connectie naar de juiste databases maken en dan de SSIS packages uitvoeren. 
 
 #### Database connectie
-Om de connectie naar de juiste databases te maken maken we gebruik van deze [solution](./introBI-visionAirport). Voer volgende stappen uit voor elke connectie (OLTP en DWH) in de *Connection Manager* folder:
+Om de connectie naar de juiste databases te maken, maken we gebruik van deze [solution](./introBI-visionAirport). Voer volgende stappen uit voor elke connectie (OLTP en DWH) in de *Connection Manager* folder:
 1. Dubbelklik op de connectie om het beheer-scherm te openen.
 2. Selecteer *Native OLE DB\SQL Server Native Client 11.0* als provider.
 3. Bij Server name geef je de servernaam van je machine in. Dit is de Server name die je gebruikt om aan te melden bij SSMS.
