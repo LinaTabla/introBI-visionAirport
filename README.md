@@ -101,7 +101,7 @@ Voer de *archive* script uit in deze volgorde:
 In deze stap beginnen we aan de datawarehouse. Om de gezuiverde data vanuit SSIS in te laden in SSMS moeten we eerst het nodige doen in SSMS en maken we daarna gebruik van SSIS.
 
 ### DWH setup in SSMS <a name="ssms"></a>
-1. In de [Database setup](#databasesetup) hebben we de *VisionAirport_DWH* database aangemaakt. In deze database gaan we de gezuivere data inladen.
+1. In de [Database setup](#databasesetup) hebben we de *VisionAirport_DWH* database aangemaakt. In deze database gaan we de gezuiverde data inladen.
 2. Voer de [Create_DWH_Tables.sql](./scripts/DWH/Create_DWH_Tables.sql) script uit in de *VisionAirport_DWH* database.
 > Script bestaat nog niet. Enkel nog gedaan voor Vlucht.
 
