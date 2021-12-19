@@ -7,6 +7,6 @@ INSERT INTO [ARCHIVE].[vertrek]
 		NULLIF(CAST(Baan AS int), ''), 
 		NULLIF(CAST(Bezetting AS int), ''), 
 		NULLIF(CAST(Vracht AS varchar(10)), ''), 
-		NULLIF(CAST(Aankomsttijd AS datetime), '')
+		NULLIF(CAST(Vertrektijd AS datetime), '')
 	FROM [RAW].[export_vertrek]
 	WHERE NULLIF(CAST(Vertrektijd AS DATETIME), '') IS NULL;

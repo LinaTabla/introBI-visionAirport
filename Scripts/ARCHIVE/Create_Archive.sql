@@ -1,4 +1,4 @@
-use VisionAiport_OLTP;
+use VisionAirport_OLTP;
 
 -- Copy structure of RAW files to make ARCHIVE files
 select top 0 * into ARCHIVE.aankomst from RAW.export_aankomst;

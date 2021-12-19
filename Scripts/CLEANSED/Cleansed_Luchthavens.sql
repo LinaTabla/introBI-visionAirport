@@ -14,7 +14,7 @@ INSERT INTO [CLEANSED].[luchthavens]
 			CAST(Alt AS int) Altidue,
 			CAST(TZ AS float) TZ,
 			CAST(DST AS char(1)) DST,
-			NULLIF(REPLACE(CAST(Tz1 AS varchar(100)), '\N', ''), '') Area
+			NULLIF(REPLACE(CAST(Tz2 AS varchar(100)), '\N', ''), '') Area
 		FROM [RAW].[export_luchthavens]
 	) AS export_luchthavens
 	WHERE ICAO IS NOT NULL 
