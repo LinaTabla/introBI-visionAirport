@@ -73,7 +73,7 @@ Voer de *cleanse* scripts uit in deze volgorde:
 2. [Cleansed_Vliegtuigtype.sql](./Scripts/CLEANSED/Cleansed_Vliegtuigtype.sql)
 3. [Cleansed_Vliegtuig.sql](./Scripts/CLEANSED/Cleansed_Vliegtuig.sql)
 4. [Cleansed_Vlucht.sql](./Scripts/CLEANSED/Cleansed_Vlucht.sql)
-5. [Cleansed_Banen.sql](./Scripts/CLEANSED/Cleansed_Banen.sql)
+5. [Cleansed_Banen.sql](./Scripts/CLEANSED/Cleansed_banen.sql)
 6. [Cleansed_Aankomst.sql](./Scripts/CLEANSED/Cleansed_Aankomst.sql)
 7. [Cleansed_Vertrek.sql](./Scripts/CLEANSED/Cleansed_Vertrek.sql)
 8. [Cleansed_Klant.sql](./Scripts/CLEANSED/Cleansed_Klant.sql)
