@@ -12,7 +12,7 @@ INSERT INTO [ARCHIVE].[luchthavens]
 			CAST(Alt AS int) Altidue,
 			CAST(TZ AS float) TimeZoneNummer,
 			CAST(DST AS char(3)) DST,
-			NULLIF(REPLACE(CAST(Tz1 AS varchar(50)), '\N', ''), '') TimeZoneTekst
+			NULLIF(REPLACE(CAST(Tz2 AS varchar(50)), '\N', ''), '') TimeZoneTekst
 		FROM [RAW].[export_luchthavens]
 	) AS export_luchthavens
 	WHERE ICAO IS NULL;

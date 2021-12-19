@@ -82,7 +82,7 @@ Voer de *cleanse* scripts uit in deze volgorde:
 11. [Cleansed_Weer.sql](./Scripts/CLEANSED/Cleansed_Weer.sql)
 
 ### Archive scripts <a name="archive"></a>
-In de [deze](./Scripts/ARCHIVED) folder staan alle scripts die invloed op hebben op het ARCHIVED-schema. We creëren eerst de nodige ARCHIVE-tabellen met de [Create_Archive.sql](./Scripts/ARCHIVED/Create_Archive.sql) script. Dit script maakt de tabellen aan door de structuur van de RAW-tabellen te kopiëren.
+In de [deze](./Scripts/ARCHIVED) folder staan alle scripts die invloed op hebben op het ARCHIVED-schema. We creëren eerst de nodige ARCHIVE-tabellen met de [Create_Archive.sql](./Scripts/ARCHIVE/Create_Archive.sql) script. Dit script maakt de tabellen aan door de structuur van de RAW-tabellen te kopiëren.
 <br>
 
 Daarna vullen we de ARCHIVE-tabellen op dezelfde manier als bij de *cleanse* scripts.
