@@ -2,48 +2,43 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>introBI-visionAirport</Name>
-    <LastWriteTime>2021-12-17T04:24:10.5727342Z</LastWriteTime>
+    <LastWriteTime>2021-12-18T13:02:20.7514266Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Incremental.dtsx</Name>
-      <LastWriteTime>2021-12-16T10:37:52.6971332Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>FullLoad.dtsx</Name>
-      <LastWriteTime>2021-12-14T16:10:35.3700733Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>DimBanen.dtsx</Name>
-      <LastWriteTime>2021-12-17T03:24:46.9780936Z</LastWriteTime>
+      <LastWriteTime>2021-12-18T13:02:20.7034542Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDatum.dtsx</Name>
-      <LastWriteTime>2021-12-17T03:26:37.103067Z</LastWriteTime>
+      <LastWriteTime>2021-12-18T09:29:54.2993827Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimGate.dtsx</Name>
-      <LastWriteTime>2021-12-17T03:57:09.6154531Z</LastWriteTime>
+      <LastWriteTime>2021-12-18T09:29:54.2993827Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimLuchthaven.dtsx</Name>
-      <LastWriteTime>2021-12-17T04:01:49.0947044Z</LastWriteTime>
+      <LastWriteTime>2021-12-18T09:29:54.2993827Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimMaatschappij.dtsx</Name>
-      <LastWriteTime>2021-12-17T04:04:27.49403Z</LastWriteTime>
+      <LastWriteTime>2021-12-18T12:57:27.9798794Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimVliegtuigType.dtsx</Name>
-      <LastWriteTime>2021-12-17T04:24:06.6390932Z</LastWriteTime>
+      <LastWriteTime>2021-12-18T12:11:28.2535059Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>FactVlucht.dtsx</Name>
+      <LastWriteTime>2021-12-18T09:29:54.3073834Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

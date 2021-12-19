@@ -7,14 +7,36 @@
   DTS:CreatorName="LAPTOP-5SIJ6S3C\LinaT"
   DTS:DTSID="{EB7B407E-9B2D-4F23-8CEE-D957AD97C1F9}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{7E7110FC-C0C2-4A84-BBFB-0D3FE23370DF}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{6841CF1C-A878-4E2A-9E20-115F2BD3207D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-WOUT-V.VisionAirport_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FEB70276-2729-4E5C-B504-7FB2640E3E59}"
+      DTS:ObjectName="LAPTOP-WOUT-V.VisionAirport_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LAPTOP-WOUT-V;Initial Catalog=VisionAirport_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-WOUT-V.VisionAirport_OLTP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{262B3CFC-E9E9-4EB8-AFF7-E2532DCB8A0A}"
+      DTS:ObjectName="LAPTOP-WOUT-V.VisionAirport_OLTP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LAPTOP-WOUT-V;Initial Catalog=VisionAirport_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -90,8 +112,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{BFCB8D5B-2FBE-428F-9CBF-A92743B26DD8}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-5SIJ6S3C.VisionAirport_DWH]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-WOUT-V.VisionAirport_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-WOUT-V.VisionAirport_DWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -237,8 +259,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{4B9BD609-255E-4B53-AD76-17DCAE0A55E3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-5SIJ6S3C.VisionAirport_OLTP]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-WOUT-V.VisionAirport_OLTP]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-WOUT-V.VisionAirport_OLTP]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -389,7 +411,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="155,42"
           Id="Package\Data Flow Task"
           TopLeft="293.333321677314,84.9333340083228" />
       </GraphLayout>
@@ -401,11 +423,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="229.999990860621,110.933334214952" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="222.499991158645,239.200001900991" />
         <EdgeLayout
@@ -434,7 +456,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -447,7 +469,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -18,3 +18,5 @@ INSERT INTO [CLEANSED].[luchthavens]
 		FROM [RAW].[export_luchthavens]
 	) AS export_luchthavens
 	WHERE ICAO IS NOT NULL 
+
+

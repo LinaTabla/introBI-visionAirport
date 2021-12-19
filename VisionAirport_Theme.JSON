@@ -1,0 +1,7 @@
+{
+"name": "VisionAirport_Theme",
+"dataColors": [ "#90C226", "#54A021", "#E6B91E", "#E76618", "#C42F1A", "#918655", "#99CA3C", "#B9D181" ],
+"background":  "#000000",
+"foreground":  "#FFFFFF",
+"tableAccent":  "#90C226"
+}
