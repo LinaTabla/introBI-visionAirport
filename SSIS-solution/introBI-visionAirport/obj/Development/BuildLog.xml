@@ -2,64 +2,53 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>introBI-visionAirport</Name>
-<<<<<<< Updated upstream
-    <LastWriteTime>2021-12-19T20:52:08Z</LastWriteTime>
-=======
-    <LastWriteTime>2021-12-19T20:47:42.9924029Z</LastWriteTime>
->>>>>>> Stashed changes
+    <LastWriteTime>2021-12-20T20:15:21.5715322Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimBanen.dtsx</Name>
-<<<<<<< Updated upstream
-      <LastWriteTime>2021-12-19T21:18:20Z</LastWriteTime>
-=======
-      <LastWriteTime>2021-12-19T20:19:07.2357909Z</LastWriteTime>
->>>>>>> Stashed changes
+      <LastWriteTime>2021-12-20T17:46:32.1096337Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDatum.dtsx</Name>
-      <LastWriteTime>2021-12-19T20:52:08Z</LastWriteTime>
+      <LastWriteTime>2021-12-17T03:26:37.103067Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimGate.dtsx</Name>
-      <LastWriteTime>2021-12-19T16:08:58Z</LastWriteTime>
+      <LastWriteTime>2021-12-17T03:57:09.6154531Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimLuchthaven.dtsx</Name>
-      <LastWriteTime>2021-12-19T21:19:52Z</LastWriteTime>
+      <LastWriteTime>2021-12-20T17:26:10.4094203Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimMaatschappij.dtsx</Name>
-<<<<<<< Updated upstream
-      <LastWriteTime>2021-12-19T21:43:24Z</LastWriteTime>
-=======
-      <LastWriteTime>2021-12-19T20:12:15.8052769Z</LastWriteTime>
->>>>>>> Stashed changes
+      <LastWriteTime>2021-12-20T17:26:10.4114162Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimVliegtuigType.dtsx</Name>
-<<<<<<< Updated upstream
-      <LastWriteTime>2021-12-19T21:49:36Z</LastWriteTime>
-=======
-      <LastWriteTime>2021-12-19T20:12:15.8072722Z</LastWriteTime>
->>>>>>> Stashed changes
+      <LastWriteTime>2021-12-20T18:22:55.7607802Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactVlucht.dtsx</Name>
-      <LastWriteTime>2021-12-19T20:52:08Z</LastWriteTime>
+      <LastWriteTime>2021-12-20T20:06:50.7279913Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimVliegtuig.dtsx</Name>
-      <LastWriteTime>2021-12-19T20:47:40.0022406Z</LastWriteTime>
+      <LastWriteTime>2021-12-20T17:26:15.6064348Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimTijd.dtsx</Name>
+      <LastWriteTime>2021-12-20T20:15:19.0602193Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
