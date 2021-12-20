@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{CF232253-3E43-44A3-B53C-2C09F15FD6BA}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F61FFB55-B0AC-4431-951B-C04D18162AEE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -683,7 +683,7 @@
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="245,330" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="230,439.090909090909" />
         <EdgeLayout
@@ -710,18 +710,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="320,372">
+          TopLeft="318.5,371.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.090909090909"
+              EndConnector="0,67.490909090909"
               Start="0,0"
-              End="0,59.590909090909">
+              End="0,59.990909090909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.590909090909" />
+                    End="0,59.990909090909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

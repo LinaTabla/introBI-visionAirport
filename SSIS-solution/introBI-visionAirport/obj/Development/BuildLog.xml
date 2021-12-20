@@ -2,13 +2,21 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>introBI-visionAirport</Name>
+<<<<<<< Updated upstream
     <LastWriteTime>2021-12-19T20:52:08Z</LastWriteTime>
+=======
+    <LastWriteTime>2021-12-19T20:47:42.9924029Z</LastWriteTime>
+>>>>>>> Stashed changes
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimBanen.dtsx</Name>
+<<<<<<< Updated upstream
       <LastWriteTime>2021-12-19T21:18:20Z</LastWriteTime>
+=======
+      <LastWriteTime>2021-12-19T20:19:07.2357909Z</LastWriteTime>
+>>>>>>> Stashed changes
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,17 +36,30 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimMaatschappij.dtsx</Name>
+<<<<<<< Updated upstream
       <LastWriteTime>2021-12-19T21:43:24Z</LastWriteTime>
+=======
+      <LastWriteTime>2021-12-19T20:12:15.8052769Z</LastWriteTime>
+>>>>>>> Stashed changes
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimVliegtuigType.dtsx</Name>
+<<<<<<< Updated upstream
       <LastWriteTime>2021-12-19T21:49:36Z</LastWriteTime>
+=======
+      <LastWriteTime>2021-12-19T20:12:15.8072722Z</LastWriteTime>
+>>>>>>> Stashed changes
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactVlucht.dtsx</Name>
       <LastWriteTime>2021-12-19T20:52:08Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimVliegtuig.dtsx</Name>
+      <LastWriteTime>2021-12-19T20:47:40.0022406Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

@@ -7,6 +7,10 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
+<<<<<<< Updated upstream
       DTS:ConnectionString="Data Source=LAPTOP-74PCCE1K;Initial Catalog=VisionAirport_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+=======
+      DTS:ConnectionString="Data Source=LAPTOP-5SIJ6S3C;Initial Catalog=VisionAirport_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+>>>>>>> Stashed changes
   </DTS:ObjectData>
 </DTS:ConnectionManager>
