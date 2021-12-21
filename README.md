@@ -122,3 +122,13 @@ Voer nu de SSIS packages uit in de gegeven volgorde:
 ## Analyseren met PowerBI <a name="powerbi"></a>
 Aan de hand van de data die ingeladen werd in het datawarehouse, maken we het dashboard.
 <br>
+
+## Waarom werkt het niet?
+Door een fout in een paar scriptjes lukt het ssis proces niet volledig.  
+Hetgene we moeten doen om dit op te lossen is volgende:
+- In tabel vertek en aankomst Uur en Minuut toevoegen.
+- Twee CLEANSED tabellen toevoegen: generated_time en generated_date.  
+- En dan de factVlucht aanvullen met de toegevoegde Uur en Minuut.  
+
+Hier zijn we echter pas laat achter gekomen en proberen dit nog te verbeteren.  
+Op de demo zou het moeten werken, maar bij upload hoogstwaarschijnlijk nog niet.

@@ -68,7 +68,9 @@ CREATE TABLE [CLEANSED].[aankomst]
 	Baan	int	NULL,
 	Bezetting	int	NULL,
 	Vracht	int	NULL,
-	Aankomsttijd	datetime	NULL,
+	Datum			date		NULL,
+	Uur				tinyint		NULL,
+	Minuut			tinyint		NULL
 	FOREIGN KEY (VluchtId) REFERENCES [CLEANSED].[vlucht](VluchtId),
 	FOREIGN KEY (Baan) REFERENCES [CLEANSED].[banen](Baannummer)
 );
@@ -84,7 +86,9 @@ CREATE TABLE [CLEANSED].[vertrek]
 	Baan	int NULL,
 	Bezetting	int	NULL,
 	Vracht	int	NULL,
-	Vertrektijd	datetime	NULL,
+	Datum			date		NULL,
+	Uur				tinyint		NULL,
+	Minuut			tinyint		NULL
 	FOREIGN KEY (VluchtId) REFERENCES [CLEANSED].[vlucht](VluchtId),
 	FOREIGN KEY (Baan) REFERENCES [CLEANSED].[banen](Baannummer)
 );
@@ -128,6 +132,30 @@ CREATE TABLE [CLEANSED].[planning]
 	Planterminal	char(1)	NULL,
 	Plangate	char(2)	NULL,
 	Plantijd	time	NULL
+);
+
+-- Generated datum
+DROP TABLE IF EXISTS [CLEANSED].[generatedDatum];
+CREATE TABLE [CLEANSED].[generatedDatum]
+(
+	DatumID		bigint	IDENTITY(1,1),
+	DagNr		smallint,
+	DagTekst 		varchar(10),
+	FiscaleWeek 	tinyint,
+	Maand 			tinyint,
+	Jaar 			smallint,
+	VolledigeDatum 	date,
+	PRIMARY KEY (DatumID)
+);
+
+-- Generated tijd
+DROP TABLE IF EXISTS [CLEANSED].[generatedTime];
+CREATE TABLE [CLEANSED].[generatedTime]
+(
+	TimeID	smallint,
+	Uur		tinyint,
+	Minuut 	tinyint,
+	PRIMARY KEY (TimeID)
 );
 
 -- Weer

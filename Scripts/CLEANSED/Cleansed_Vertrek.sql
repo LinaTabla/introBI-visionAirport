@@ -1,16 +1,16 @@
 USE [VisionAirport_OLTP];
 
-INSERT INTO [CLEANSED].[aankomst] 
+INSERT INTO [CLEANSED].[vertrek]
 	SELECT 
-		CAST(CAST(REPLACE(A.VluchtId, ',', '.') AS float) AS int),
-		CAST(A.VliegtuigCode AS varchar(10)), 
+		CAST(CAST(REPLACE(VluchtId, ',', '.') AS float) AS int),
+		CAST(VliegtuigCode AS varchar(10)), 
 		NULLIF(CAST(Terminal AS char(1)), ''), 
 		NULLIF(CAST(Gate AS char(2)), ''), 
 		NULLIF(CAST(Baan AS int), ''), 
 		NULLIF(CAST(Bezetting AS int), ''), 
-		NULLIF(CAST(Vracht AS int), ''),
-		NULLIF(CAST(Aankomsttijd AS datetime), '')
-	FROM [RAW].[export_aankomst] A
-		LEFT OUTER JOIN [CLEANSED].[vlucht] V
-			ON V.VluchtId = CAST(CAST(REPLACE(A.VluchtId, ',', '.') AS float) AS int)
-	WHERE Aankomsttijd <> '' AND V.VluchtId IS NOT NULL;
+		NULLIF(CAST(Vracht AS int), ''), 
+		NULLIF(CAST(Vertrektijd AS DATE), ''),
+		NULLIF(DATEPART(HOUR, Vertrektijd), ''),
+		NULLIF(DATEPART(MINUTE, Vertrektijd), '')	
+	FROM [RAW].[export_vertrek]
+	WHERE NULLIF(CAST(Vertrektijd AS datetime), '') IS NOT NULL;

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-5SIJ6S3C</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1dC7n20EhkmGQDZCgjw8OwAAAAACAAAAAAAQZgAAAAEAACAAAAAdsgwnbKXWFcIqprpcmP0fR4X0ZXOq/EhMmgSg915foQAAAAAOgAAAAAIAACAAAAAe0lPBdbrn1X4N6sNjWvfT3KA4CsCX/mt/iZUx07xmEpAAAACi7nVAVX6NFpn8sdq/wYPXt1wii7yndF4/VK+106MBADesIC+6s7pcberZJsBu/G1tE4Jtg01ofF29GuCM5R1KT4ZwadvaV9KnMVL0jkOkEe9h87ixYLSAfAzSr3tqqclkGDYZv4Ey7uT6jQfunytj4DfjuHr16anUSXk2+YyDGL3sM9o7f22WwNXhtu0a5RhAAAAASmc2pk7Rw44WggE+MDxzkiqFaHT3aAh1ojtVm9yovUxjv3rV5oy/CxNUA9Hp8yYuEa8j31EHHEOhYX75nQQmCw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdJEMpAKW3k2lf3XJxyAGLgAAAAACAAAAAAAQZgAAAAEAACAAAABTcF32ZMpN5T1SM9/PcBEYKsI1txhe3nqPw6EN49j1uAAAAAAOgAAAAAIAACAAAACOaJ8rJVXu4yeF0cTmrw096h42I52z+7YwvSwB+KM/v5AAAACU7dTzctRIqLEXsdABQX6rDtCamqg37big8VgNkm5B83MWGz/GFz1Qk+qjIZWRAcwFClYJDiEzkg0M+9UYuOZ1lpO5Gc5YfOmgS8Ah3yHotHmiYkRFrZCYY+n4dMTjQeGod80/Wpkf8uEFeRwEpZ9ZumspjO+P84r2z2nIJAUd+c11HhY3KaXeOf8HZyM+hFZAAAAAzfT69nvoBWKjhDK943DGazzy+Hx7GdBItGwngG8LUhOtm0sHG+M/Cvd0f2LfXh53ZliNK+oOLu2MOJFQpMxEHQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,8 +36,10 @@
           <SSIS:Package SSIS:Name="DimLuchthaven.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimMaatschappij.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimVliegtuigType.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="FactVlucht.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimVliegtuig.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DimTijd.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactVluchtWrong.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactVlucht.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LAPTOP-5SIJ6S3C.VisionAirport_OLTP.conmgr" />
@@ -968,10 +970,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{45643B48-6366-42CB-A080-7B4AE192615E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F61FFB55-B0AC-4431-951B-C04D18162AEE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1006,6 +1008,36 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">Data Source=LAPTOP-WOUT-V;Initial Catalog=VisionAirport_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.LAPTOP-WOUT-V.VisionAirport_DWH.ConnectRetryCount">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.LAPTOP-WOUT-V.VisionAirport_DWH.ConnectRetryInterval">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">5</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.LAPTOP-WOUT-V.VisionAirport_DWH.ConnectUsingManagedIdentity">
@@ -1126,6 +1158,36 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.LAPTOP-WOUT-V.VisionAirport_OLTP.ConnectRetryCount">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.LAPTOP-WOUT-V.VisionAirport_OLTP.ConnectRetryInterval">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">5</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.LAPTOP-WOUT-V.VisionAirport_OLTP.ConnectUsingManagedIdentity">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -1216,23 +1278,6 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="FactVlucht.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{7DDA12CA-C92F-47F3-9515-29C0855777E9}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FF874F84-6D3E-46DF-9517-F39B8CA0B9F1}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="DimVliegtuig.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{389FDAFA-4D95-4F96-B59B-A9CD661E4683}</SSIS:Property>
@@ -1243,6 +1288,57 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{1CEB719B-34D4-49CA-AFD5-1B852CE577CF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="DimTijd.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{E5A5CB6B-856C-473B-8943-303962E51134}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B4020072-22F5-4F64-8734-1AEE50316CF6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactVluchtWrong.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{7DDA12CA-C92F-47F3-9515-29C0855777E9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">201</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{88E06CEE-A5AA-4524-8982-316346715B23}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactVlucht.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{72353520-1152-4835-A57A-95F65256BF1B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">110</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9222C1FB-EF5B-4036-AFE5-7C143EAAD149}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
