@@ -46,7 +46,7 @@ dim AS
   FROM src
 )
 INSERT
-	INTO [CLEANSED].[generated_datum]
+	INTO [CLEANSED].[generatedDatum]
 	SELECT * 
 		FROM dim
 		ORDER BY VolledigeDatum
@@ -62,7 +62,7 @@ BEGIN
 
 	WHILE @minute < 60
 	BEGIN
-		INSERT INTO [CLEANSED].[generated_time]
+		INSERT INTO [CLEANSED].[generatedTime]
 			SELECT
 			(@hour*100) + @minute as TimeKey,
 			@hour as [Hour],

@@ -136,7 +136,7 @@ CREATE TABLE [CLEANSED].[planning]
 
 -- Generated datum
 DROP TABLE IF EXISTS [CLEANSED].[generatedDatum];
-CREATE TABLE [CLEANSED].[generated_datum]
+CREATE TABLE [CLEANSED].[generatedDatum]
 (
 	DatumID		bigint	IDENTITY(1,1),
 	DagNr		smallint,
@@ -150,7 +150,7 @@ CREATE TABLE [CLEANSED].[generated_datum]
 
 -- Generated tijd
 DROP TABLE IF EXISTS [CLEANSED].[generatedTime];
-CREATE TABLE [CLEANSED].[generated_time]
+CREATE TABLE [CLEANSED].[generatedTime]
 (
 	TimeID	smallint,
 	Uur		tinyint,

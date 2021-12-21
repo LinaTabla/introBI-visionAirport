@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-5SIJ6S3C</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdJEMpAKW3k2lf3XJxyAGLgAAAAACAAAAAAAQZgAAAAEAACAAAAD0GPnd3c1QUv6dLjuObfL/VeFgOcNzusfpAYyK89OqMwAAAAAOgAAAAAIAACAAAACjXy0t27Ov4iDh0KF1KQn/DUHaRzS1Z2GrUMZxuVBKa5AAAACtABWAhVZVztfDQrAMnmPYtGBr6gRPwNbTuVannSSO9F5A6mgo4bUBwV1UlxGHjhfqjrSdUHAMGFT1NG55rF3cXZS/eRWOwXvWDij4TQomLcj6GSVwkDahjVzcON0m3b9vSFbX4LecKQwcFc4hXJEj2wLWUrfFQcVeqUAfaXWQZI26Wd3L7Id7eJYdCX9tCVtAAAAAngY/Uy8RWWSMC1pmwPSNvJp4zYS/nz1VnLGhaciSiSUAl3xfOSbuRbdImN4N7bUY/dQJ8OpGzAXqa8inn1+z6Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdJEMpAKW3k2lf3XJxyAGLgAAAAACAAAAAAAQZgAAAAEAACAAAABTcF32ZMpN5T1SM9/PcBEYKsI1txhe3nqPw6EN49j1uAAAAAAOgAAAAAIAACAAAACOaJ8rJVXu4yeF0cTmrw096h42I52z+7YwvSwB+KM/v5AAAACU7dTzctRIqLEXsdABQX6rDtCamqg37big8VgNkm5B83MWGz/GFz1Qk+qjIZWRAcwFClYJDiEzkg0M+9UYuOZ1lpO5Gc5YfOmgS8Ah3yHotHmiYkRFrZCYY+n4dMTjQeGod80/Wpkf8uEFeRwEpZ9ZumspjO+P84r2z2nIJAUd+c11HhY3KaXeOf8HZyM+hFZAAAAAzfT69nvoBWKjhDK943DGazzy+Hx7GdBItGwngG8LUhOtm0sHG+M/Cvd0f2LfXh53ZliNK+oOLu2MOJFQpMxEHQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -39,6 +39,7 @@
           <SSIS:Package SSIS:Name="DimVliegtuig.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimTijd.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FactVluchtWrong.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactVlucht.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LAPTOP-5SIJ6S3C.VisionAirport_OLTP.conmgr" />
@@ -1321,6 +1322,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{88E06CEE-A5AA-4524-8982-316346715B23}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactVlucht.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{72353520-1152-4835-A57A-95F65256BF1B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">110</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9222C1FB-EF5B-4036-AFE5-7C143EAAD149}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
